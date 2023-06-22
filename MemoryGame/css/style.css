@@ -1,0 +1,16 @@
+.mainContainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: #E5DEDE;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigationContainer {
+    background-color: aliceblue;
+    width: 100%;
+}
+
+:root{
+    --background-color: var(var(--background-color));
+}
