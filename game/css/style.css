@@ -1,0 +1,32 @@
+
+:root{
+    --primary-color:#E5DEDE;
+    --secondary-color: #91CECF;
+    --background-color: #E5DEDE;
+    --navigationContainer-height: 60px;
+}
+
+
+
+
+
+
+.mainContainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.navigationContainer {
+    height: var(--navigationContainer-height);
+    background-color: var(--secondary-color);
+    width: 100%;
+}
+
+.contentContainer {
+    width: 100%;
+    height: calc(100%--navigationContainer-height);
+    background-color: var(--primary-color);
+}
