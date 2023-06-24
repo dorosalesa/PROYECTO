@@ -1,7 +1,7 @@
-
+import { View } from "../view.js";
 
 export class MenuView extends View {
-    constructor(controller){
-        this.controller=controller;
-    }
+	constructor(controller) {
+		super(controller);
+	}
 }

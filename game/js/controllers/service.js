@@ -1,5 +1,5 @@
 export class Service {
-    constructor(controller){
-        this.controller=controller;
-    }
+	constructor(controller) {
+		this.controller = controller;
+	}
 }
