@@ -2,6 +2,9 @@ import { MenuController } from "./controllers/menu/menuController.js";
 
 export class GameManager {
 	constructor() {
-		this.controller=new MenuController(this);
+		var navigationContainer = document.getElementById('navigationContainer');
+		var contentContainer=document.getElementById('contentContainer');
+
+		this.controller=new MenuController(this,contentContainer);
 	}
 }
