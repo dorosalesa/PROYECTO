@@ -12,11 +12,11 @@ export class MenuView extends View {
 		var loginButton = document.createElement('div');
 		this.container.appendChild(loginButton);
 		loginButton.innerHTML='Login';
-		loginButton.className='menuView-button';
+		loginButton.className='game-button';
 
 		var playButton = document.createElement('div');
 		this.container.appendChild(playButton);
 		playButton.innerHTML='Play';
-		playButton.className='menuView-button';
+		playButton.className='game-button';
 	}
 }
