@@ -1,8 +1,8 @@
 import { View } from "../view.js";
 
-export class PlayView extends View {
+export class ScoresView extends View {
 	constructor(controller,parent) {
 		super(controller, parent);
-		this.container.className='playView';
+		this.container.className='scoresView';
 	}
 }

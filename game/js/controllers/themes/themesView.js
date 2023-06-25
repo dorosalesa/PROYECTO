@@ -1,22 +1,23 @@
 import { View } from "../view.js";
 
-export class MenuView extends View {
+export class ThemesView extends View {
 	constructor(controller,parent) {
 		super(controller, parent);
-		this.controller.className='menuView';
+		this.container.className='themesView';
 
-		var title = document.createElement('p');
-		title.innerHTML='Menu';
-		this.container.appendChild(title);
+		var foodButton = document.createElement('div');
+		this.container.appendChild(foodButton);
+		foodButton.innerHTML='Food';
+		foodButton.className='game-button';
 
-		var loginButton = document.createElement('div');
-		this.container.appendChild(loginButton);
-		loginButton.innerHTML='Login';
-		loginButton.className='game-button';
+		var facesButton = document.createElement('div');
+		this.container.appendChild(facesButton);
+		facesButton.innerHTML='Faces';
+		facesButton.className='game-button';
 
-		var playButton = document.createElement('div');
-		this.container.appendChild(playButton);
-		playButton.innerHTML='Play';
-		playButton.className='game-button';
+		var flagsButton = document.createElement('div');
+		this.container.appendChild(flagsButton);
+		flagsButton.innerHTML='Flags';
+		flagsButton.className='game-button';
 	}
 }
