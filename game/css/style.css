@@ -1,28 +1,36 @@
 :root {
-	--primary-color: #e5dede;
-	--secondary-color: #91cecf;
+	--titleText-color: #f15f5d;
+	--buttonBackground-color: #91cecf;
+	--buttonText-color: #196371;
 	--background-color: #e5dede;
+	--highlight-color: #7d8f95;
+	--alternate-color: #82babd;
 	--navigationContainer-height: 60px;
+	--titleText-font: Helvetica;
+	--subtitleText-font: Verdana;
+	padding: 0;
+	margin:0;
 }
 
 .mainContainer {
 	width: 100vw;
 	height: 100vh;
-	background-color: var(--primary-color);
+	background-color: var(--background-color);
 	display: flex;
 	flex-direction: column;
 }
 
 .contentContainer {
 	width: 100%;
-	height: calc(100%--navigationContainer-height);
-	background-color: var(--primary-color);
+	height: calc(100% - --navigationContainer-height);
+	background-color: var(--background-color);
 }
 
 .game-button {
 	height: 50px;
 	width: 60px;
-	background-color: var(--secondary-color);
+	background-color: var(--buttonBackground-color);
+	color: var(--buttonText-color);
 
 	display: flex;
 	align-items: center;
@@ -32,28 +40,31 @@
 	font-weight: bold;
 	border-radius: 10px;
 	margin-top: 10px;
+	padding: 10px 15px;
 }
 
 .navigationContainer {
 	height: var(--navigationContainer-height);
-	background-color: var(--secondary-color);
+	background-color: var(--background-color);
 	width: 100%;
 	display: flex;
 	align-items: center;
-
 }
 
 .navigationButton button {
-	font-size: 20px;
+	font: var(--subtitleText-font);
+	font-size: 28px;
 	font-weight: bold;
 }
 
-.navigationTitle{
+.navigationTitle {
 	width: 100%;
+	color: var(--titleText-color);
 }
 
-.navigationTitle p{
+.navigationTitle p {
 	text-align: center;
-	font-size: 20px;
+	font: var(--titleText-font);
+	font-size: 32px;
 	font-weight: bold;
 }
