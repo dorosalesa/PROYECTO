@@ -5,12 +5,12 @@ export class CreditsView extends View {
 		super(controller, parent);
 		this.container.className='creditsView';
 
-		var title = document.createElement('p');
-		title.innerHTML='Menu';
+		var title = document.createElement('h3');
+		title.innerHTML='Proyecto Juego Memoria';
 		this.container.appendChild(title);
 
-		var text = document.createElement('p');
-		text.innerHTML='Menu';
+		var text = document.createElement('h4');
+		text.innerHTML='Creado por: Diana Rosales';
 		this.container.appendChild(text);
 	}
 }

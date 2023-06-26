@@ -5,6 +5,9 @@ export class MenuView extends View {
 		super(controller, parent);
 		this.container.className='menuView';
 
+		var navigationButton=document.getElementById('navigationButton');
+		navigationButton.style.display='none';
+
 		var loginButton = document.createElement('div');
 		this.container.appendChild(loginButton);
 		loginButton.innerHTML='Login';

@@ -12,7 +12,7 @@ export class GameManager {
 		this.navigationButton = document.getElementById("navigationButton");
 		this.title = document.getElementById("navigationTitle");
 		var contentContainer = document.getElementById("contentContainer");
-		this.goto(2);
+		this.goto(3);
 	}
 	goto(controllerID) {
 		switch (controllerID) {
