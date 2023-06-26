@@ -34,12 +34,5 @@ export class MenuView extends View {
 		this.container.appendChild(creditsButton);
 		creditsButton.innerHTML='Credits';
 		creditsButton.className='game-button';
-
-
-
-
-
-
-
 	}
 }

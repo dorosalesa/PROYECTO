@@ -6,8 +6,8 @@
 	--highlight-color: #7d8f95;
 	--alternate-color: #82babd;
 	--navigationContainer-height: 60px;
-	--titleText-font: Helvetica;
-	--subtitleText-font: Verdana;
+	--titleText-font: 'Apple Chancery', sans-serif;
+	--subtitleText-font: 'Futura PT', sans-serif;
 	padding: 0;
 	margin:0;
 }
@@ -32,8 +32,8 @@ body{
 }
 
 .game-button {
-	height: max-content;
-	width: max-content;
+	height: 40px;
+	width: 100px;
 	background-color: var(--buttonBackground-color);
 	color: var(--buttonText-color);
 
@@ -43,6 +43,7 @@ body{
 
 	font-size: 20px;
 	font-weight: bold;
+	font-family: var(--subtitleText-font);
 	border-radius: 10px;
 	margin-top: 10px;
 	padding: 5px;
@@ -64,7 +65,7 @@ body{
 	border: none;
 	border-radius: 10px;
 	padding: 10px;
-	font: var(--subtitleText-font);
+	font-family: var(--subtitleText-font);
 	margin: 5px;
 	font-weight: bold;
 	font-size: 16px;
@@ -78,7 +79,7 @@ body{
 
 .navigationTitle p {
 	text-align: center;
-	font: var(--titleText-font);
+	font-family: var(--titleText-font);
 	font-size: 32px;
 	font-weight: bold;
 }
