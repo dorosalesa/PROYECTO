@@ -19,5 +19,6 @@ export class ThemesView extends View {
 		this.container.appendChild(flagsButton);
 		flagsButton.innerHTML='Flags';
 		flagsButton.className='game-button';
+		flagsButton.classList.add('active'); //a~adir f() selector difficultad para cambiar active class
 	}
 }

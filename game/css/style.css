@@ -11,6 +11,10 @@
 	padding: 0;
 	margin:0;
 }
+body{
+	padding: 0;
+	margin:0;
+}
 
 .mainContainer {
 	width: 100vw;
@@ -18,12 +22,15 @@
 	background-color: var(--background-color);
 	display: flex;
 	flex-direction: column;
+
 }
 
 .contentContainer {
 	width: 100%;
-	height: calc(100% - --navigationContainer-height);
+	height: 100%;
 	background-color: var(--background-color);
+	display: flex;
+	
 }
 
 .game-button {
@@ -55,6 +62,15 @@
 	font: var(--subtitleText-font);
 	font-size: 28px;
 	font-weight: bold;
+	background-color: var(--buttonBackground-color);
+	border: none;
+	border-radius: 10px;
+	padding: 10px;
+	font: var(--subtitleText-font);
+	margin: 5px;
+	font-weight: bold;
+	font-size: 16px;
+	color: var(--titleText-color);
 }
 
 .navigationTitle {

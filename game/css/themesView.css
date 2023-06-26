@@ -4,6 +4,11 @@
     
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.active {
+    background-color: var(--highlight-color);
+    color: var(--alternate-color);
 }
