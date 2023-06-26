@@ -8,7 +8,7 @@ export class GameManager {
 		this.navigationButton = document.getElementById("navigationButton");
 		this.title = document.getElementById("navigationTitle");
 		var contentContainer = document.getElementById("contentContainer");
-		this.goto(3);
+		this.goto(1);
 	}
 	goto(controllerID) {
 		switch (controllerID) {

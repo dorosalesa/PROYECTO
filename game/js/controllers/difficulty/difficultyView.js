@@ -5,10 +5,6 @@ export class DifficultyView extends View {
 		super(controller, parent);
 		this.container.className='difficultyView';
 
-		var title = document.createElement('p');
-		title.innerHTML='Difficulty';
-		this.container.appendChild(title);
-
 		var lowButton = document.createElement('div');
 		this.container.appendChild(lowButton);
 		lowButton.innerHTML='Low';
@@ -23,5 +19,6 @@ export class DifficultyView extends View {
 		this.container.appendChild(highButton);
 		highButton.innerHTML='High';
 		highButton.className='game-button';
+		highButton.classList.add('active'); //a~adir f() selector difficultad para cambiar active class
 	}
 }

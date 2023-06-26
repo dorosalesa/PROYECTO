@@ -29,13 +29,11 @@ body{
 	width: 100%;
 	height: 100%;
 	background-color: var(--background-color);
-	display: flex;
-	
 }
 
 .game-button {
-	height: 50px;
-	width: 60px;
+	height: max-content;
+	width: max-content;
 	background-color: var(--buttonBackground-color);
 	color: var(--buttonText-color);
 
@@ -47,7 +45,7 @@ body{
 	font-weight: bold;
 	border-radius: 10px;
 	margin-top: 10px;
-	padding: 10px 15px;
+	padding: 5px;
 }
 
 .navigationContainer {
