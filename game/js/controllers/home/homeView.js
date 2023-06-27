@@ -1,9 +1,9 @@
 import { View } from "../view.js";
 
-export class MenuView extends View {
+export class HomeView extends View {
 	constructor(controller,parent) {
 		super(controller, parent);
-		this.container.className='menuView';
+		this.container.className='homeView';
 
 		var navigationButton=document.getElementById('navigationButton');
 		navigationButton.style.display='none';

@@ -1,10 +1,10 @@
-import { MenuController } from "./controllers/menu/menuController.js";
+import { HomeController } from "./controllers/home/homeController.js";
 import { DifficultyController } from "./controllers/difficulty/difficultyController.js";
 import { ThemesController } from "./controllers/themes/themesController.js";
 import { ScoresController } from "./controllers/scores/scoresController.js";
 import { LoginController } from "./controllers/login/loginController.js";
 import { PlayController } from "./controllers/play/playController.js";
-import {CreditsController} from "./controllers/credits/creditsController.js";
+import { CreditsController } from "./controllers/credits/creditsController.js";
 
 export class GameManager {
 	constructor() {
@@ -17,8 +17,8 @@ export class GameManager {
 	goto(controllerID) {
 		switch (controllerID) {
 			case 1:
-				this.title.innerHTML = "Menu";
-				this.controller = new MenuController(this, contentContainer);
+				this.title.innerHTML = "Home";
+				this.controller = new HomeController(this, contentContainer);
 				break;
 			case 2:
 				this.title.innerHTML = "Log In";
