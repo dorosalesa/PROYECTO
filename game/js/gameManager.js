@@ -5,44 +5,53 @@ import { ScoresController } from "./controllers/scores/scoresController.js";
 import { LoginController } from "./controllers/login/loginController.js";
 import { PlayController } from "./controllers/play/playController.js";
 import { CreditsController } from "./controllers/credits/creditsController.js";
+import {
+	HOME_STATE,
+	LOGIN_STATE,
+	PLAY_STATE,
+	DIFFICULTY_STATE,
+	THEMES_STATE,
+	SCORES_STATE,
+	CREDITS_STATE,
+} from "./libs/constants.js";
 
 export class GameManager {
 	constructor() {
-		var navigationContainer = document.getElementById("navigationContainer");
+		this.navigationContainer = document.getElementById("navigationContainer");
 		this.navigationButton = document.getElementById("navigationButton");
 		this.title = document.getElementById("navigationTitle");
-		var contentContainer = document.getElementById("contentContainer");
-		this.goto(3);
+		this.contentContainer = document.getElementById("contentContainer");
+		this.goto(1);
 	}
-	goto(controllerID) {
-		switch (controllerID) {
-			case 1:
+	goto(state) {
+		switch (state) {
+			case HOME_STATE:
 				this.title.innerHTML = "Home";
-				this.controller = new HomeController(this, contentContainer);
+				this.controller = new HomeController(this, this.contentContainer);
 				break;
-			case 2:
+			case LOGIN_STATE:
 				this.title.innerHTML = "Log In";
-				this.controller = new LoginController(this, contentContainer);
+				this.controller = new LoginController(this, this.contentContainer);
 				break;
-			case 3:
+			case PLAY_STATE:
 				this.title.innerHTML = "Play";
-				this.controller = new PlayController(this, contentContainer);
+				this.controller = new PlayController();
 				break;
-			case 4:
+			case DIFFICULTY_STATE:
 				this.title.innerHTML = "Difficulty";
-				this.controller = new DifficultyController(this, contentContainer);
+				this.controller = new DifficultyController(this, this.contentContainer);
 				break;
-			case 5:
+			case THEMES_STATE:
 				this.title.innerHTML = "Themes";
-				this.controller = new ThemesController(this, contentContainer);
+				this.controller = new ThemesController(this, this.contentContainer);
 				break;
-			case 6:
+			case SCORES_STATE:
 				this.title.innerHTML = "Scores";
-				this.controller = new ScoresController(this, contentContainer);
+				this.controller = new ScoresController(this, this.contentContainer);
 				break;
-			case 7:
+			case CREDITS_STATE:
 				this.title.innerHTML = "Credits";
-				this.controller = new CreditsController(this, contentContainer);
+				this.controller = new CreditsController(this, this.contentContainer);
 				break;
 			default:
 				break;
