@@ -21,7 +21,7 @@ export class GameManager {
 		this.navigationButton = document.getElementById("navigationButton");
 		this.title = document.getElementById("navigationTitle");
 		this.contentContainer = document.getElementById("contentContainer");
-		this.goto(1);
+		this.goto(HOME_STATE);
 	}
 	goto(state) {
 		switch (state) {
@@ -35,7 +35,7 @@ export class GameManager {
 				break;
 			case PLAY_STATE:
 				this.title.innerHTML = "Play";
-				this.controller = new PlayController();
+				this.controller = new PlayController(this, this.contentContainer);
 				break;
 			case DIFFICULTY_STATE:
 				this.title.innerHTML = "Difficulty";
