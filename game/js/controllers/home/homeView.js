@@ -38,4 +38,8 @@ export class HomeView extends View {
 		creditsButton.innerHTML='Credits';
 		creditsButton.className='game-button';
 	}
+
+	onButtonClick(state, event){
+		this.controller.goto(state);
+	}
 }
