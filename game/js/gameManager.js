@@ -26,7 +26,7 @@ export class GameManager {
 	goto(state) {
 		switch (state) {
 			case HOME_STATE:
-				this.title.innerHTML = "Home";
+				this.title.innerHTML = "Memory Game";
 				this.controller = new HomeController(this, this.contentContainer);
 				break;
 			case LOGIN_STATE:

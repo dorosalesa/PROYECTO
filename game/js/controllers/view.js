@@ -12,7 +12,6 @@ export class View {
 	}
 
 	show(){
-		gsap.
 	}
 
 	hide(){
