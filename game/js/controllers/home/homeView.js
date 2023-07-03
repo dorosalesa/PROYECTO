@@ -19,25 +19,25 @@ export class HomeView extends View {
 			this.container
 		);
 
-		var difficultyButton = createElement("div", this.container);
-		this.container.appendChild(difficultyButton);
-		difficultyButton.innerHTML = "Difficulty";
-		difficultyButton.className = "game-button";
+		var difficultyButton = div(
+			{ innerHTML: "Difficulty", className: "game-button" },
+			this.container
+		);
 
-		var themesButton = createElement("div", this.container);
-		this.container.appendChild(themesButton);
-		themesButton.innerHTML = "Themes";
-		themesButton.className = "game-button";
+		var themesButton = div(
+			{ innerHTML: "Themes", className: "game-button" },
+			this.container
+		);
 
-		var scoresButton = createElement("div", this.container);
-		this.container.appendChild(scoresButton);
-		scoresButton.innerHTML = "Scores";
-		scoresButton.className = "game-button";
+		var scoresButton = div(
+			{ innerHTML: "Scores", className: "game-button" },
+			this.container
+		);
 
-		var creditsButton = createElement("div", this.container);
-		this.container.appendChild(creditsButton);
-		creditsButton.innerHTML = "Credits";
-		creditsButton.className = "game-button";
+		var creditsButton = div(
+			{ innerHTML: "Credits", className: "game-button" },
+			this.container
+		);
 	}
 
 	onButtonClick(state, event) {
