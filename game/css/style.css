@@ -6,14 +6,14 @@
 	--highlight-color: #7d8f95;
 	--alternate-color: #82babd;
 	--navigationContainer-height: 60px;
-	--titleText-font: 'Apple Chancery', sans-serif;
-	--subtitleText-font: 'Futura PT', sans-serif;
+	--titleText-font: "Apple Chancery", sans-serif;
+	--subtitleText-font: "Futura PT", sans-serif;
 	padding: 0;
-	margin:0;
+	margin: 0;
 }
-body{
+body {
 	padding: 0;
-	margin:0;
+	margin: 0;
 }
 
 .mainContainer {
@@ -22,7 +22,6 @@ body{
 	background-color: var(--background-color);
 	display: flex;
 	flex-direction: column;
-
 }
 
 .contentContainer {
@@ -47,6 +46,8 @@ body{
 	border-radius: 10px;
 	margin-top: 10px;
 	padding: 5px;
+
+	cursor: pointer;
 }
 
 .navigationContainer {
@@ -70,6 +71,7 @@ body{
 	font-weight: bold;
 	font-size: 16px;
 	color: var(--titleText-color);
+	cursor: pointer;
 }
 
 .navigationTitle {

@@ -10,4 +10,6 @@ export class HomeController extends Controller {
 	goto(state){
 		this.gameManager.goto(state);
 	}
+
+	
 }

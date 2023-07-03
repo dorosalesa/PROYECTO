@@ -26,6 +26,7 @@ export class GameManager {
 	goto(state) {
 		switch (state) {
 			case HOME_STATE:
+				navigationButton.style.display = "none";
 				this.title.innerHTML = "Memory Game";
 				this.controller = new HomeController(this, this.contentContainer);
 				break;
