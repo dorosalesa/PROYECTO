@@ -1,4 +1,4 @@
-import {div} from "..libs/html.js";
+import {createElement} from "../libs/html.js";
 
 export class View {
 	constructor(controller, parent) {

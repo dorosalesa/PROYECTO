@@ -1,45 +1,46 @@
+import { div, p } from "../../libs/html.js";
 import { View } from "../view.js";
 
 export class HomeView extends View {
-	constructor(controller,parent) {
+	constructor(controller, parent) {
 		super(controller, parent);
-		this.container.className='homeView';
+		this.container.className = "homeView";
 
-		var navigationButton=document.getElementById('navigationButton');
-		navigationButton.style.display='none';
+		var navigationButton = document.getElementById("navigationButton");
+		navigationButton.style.display = "none";
 
-		var loginButton = document.createElement('div');
-		this.container.appendChild(loginButton);
-		loginButton.innerHTML='Login';
-		loginButton.className='game-button';
+		var loginButton = div(
+			{ innerHTML: "Log In", className: "game-button" },
+			this.container
+		);
 
-		var playButton = document.createElement('div');
-		this.container.appendChild(playButton);
-		playButton.innerHTML='Play';
-		playButton.className='game-button';
+		var playButton = div(
+			{ innerHTML: "Play", className: "game-button" },
+			this.container
+		);
 
-		var difficultyButton = document.createElement('div');
+		var difficultyButton = createElement("div", this.container);
 		this.container.appendChild(difficultyButton);
-		difficultyButton.innerHTML='Difficulty';
-		difficultyButton.className='game-button';
+		difficultyButton.innerHTML = "Difficulty";
+		difficultyButton.className = "game-button";
 
-		var themesButton = document.createElement('div');
+		var themesButton = createElement("div", this.container);
 		this.container.appendChild(themesButton);
-		themesButton.innerHTML='Themes';
-		themesButton.className='game-button';
+		themesButton.innerHTML = "Themes";
+		themesButton.className = "game-button";
 
-		var scoresButton = document.createElement('div');
+		var scoresButton = createElement("div", this.container);
 		this.container.appendChild(scoresButton);
-		scoresButton.innerHTML='Scores';
-		scoresButton.className='game-button';
+		scoresButton.innerHTML = "Scores";
+		scoresButton.className = "game-button";
 
-		var creditsButton = document.createElement('div');
+		var creditsButton = createElement("div", this.container);
 		this.container.appendChild(creditsButton);
-		creditsButton.innerHTML='Credits';
-		creditsButton.className='game-button';
+		creditsButton.innerHTML = "Credits";
+		creditsButton.className = "game-button";
 	}
 
-	onButtonClick(state, event){
+	onButtonClick(state, event) {
 		this.controller.goto(state);
 	}
 }
