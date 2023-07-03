@@ -71,8 +71,15 @@ body {
 	font-weight: bold;
 	font-size: 16px;
 	color: var(--titleText-color);
-	display: block;
 	cursor: pointer;
+}
+
+.navigationButton {
+	display: block;
+}
+
+.hidden {
+	display: none;
 }
 
 .navigationTitle {

@@ -17,16 +17,25 @@ import {
 
 export class GameManager {
 	constructor() {
+		this.controller = null;
 		this.navigationContainer = document.getElementById("navigationContainer");
 		this.navigationButton = document.getElementById("navigationButton");
 		this.title = document.getElementById("navigationTitle");
 		this.contentContainer = document.getElementById("contentContainer");
 		this.goto(HOME_STATE);
+
+		this.navigationButton.onclick=this.goto.bind(this, HOME_STATE);
 	}
 	goto(state) {
-		navigationButton.style.display = "none";
+		if (this.controller !== null) {
+			this.controller.delete();
+		}
+
+		this.navigationButton.classList.remove('hidden');
+
 		switch (state) {
 			case HOME_STATE:
+				this.navigationButton.classList.add('hidden');
 				this.title.innerHTML = "Memory Game";
 				this.controller = new HomeController(this, this.contentContainer);
 				break;
