@@ -5,4 +5,8 @@ export class Controller {
 		this.service = null;
 		this.model = null;
 	}
+
+	delete (){
+		this.view.delete();
+	}
 }
