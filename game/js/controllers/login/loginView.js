@@ -19,5 +19,7 @@ export class LoginView extends View {
 		this.container.appendChild(okeyButton);
 		okeyButton.innerHTML='Ok';
 		okeyButton.className='game-button';
+
+		this.container.style.transform = 'translateX(${window.innerWidth}px)';
 	}
 }
