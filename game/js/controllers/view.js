@@ -5,6 +5,7 @@ export class View {
 		this.controller = controller;
 		this.parent = parent;
 		this.container = div({}, this.parent);
+		this.container.style.transform='translateX(300px)'; //'translateX(${window.innerWidth}px)'
 		this.show();
 	}
 	delete() {
@@ -16,6 +17,6 @@ export class View {
 	}
 
 	hide() {
-		gsap.to(this.container, { x: window.innerWidth, duration: 5 });
+		gsap.to(this.container, { x: 300, duration: 1 });
 	}
 }
