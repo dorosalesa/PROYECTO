@@ -25,6 +25,8 @@ export class GameManager {
 		this.goto(HOME_STATE);
 
 		this.navigationButton.onclick=this.goto.bind(this, HOME_STATE);
+
+		console.log(gsap);
 	}
 	goto(state) {
 		if (this.controller !== null) {
