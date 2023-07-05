@@ -5,7 +5,7 @@ export class View {
 		this.controller = controller;
 		this.parent = parent;
 		this.container = div({}, this.parent);
-		this.container.style.transform='translateX(300px)'; //'translateX(${window.innerWidth}px)'
+		this.container.style.transform = "translateX(300px)"; //'translateX(${window.innerWidth}px)'
 		this.show();
 	}
 	delete() {
@@ -16,7 +16,16 @@ export class View {
 		gsap.to(this.container, { x: 0, duration: 1 });
 	}
 
-	hide() {
-		gsap.to(this.container, { x: 300, duration: 1 });
+	hide(callback, state) {
+		this.callback = callback;
+		gsap.to(this.container, {
+			x: 300,
+			duration: 1,
+			onComplete: this.hideComplete.bind(this, state),
+		});
+	}
+
+	hideComplete(state) {
+		this.callback(state);
 	}
 }

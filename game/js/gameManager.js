@@ -22,13 +22,14 @@ export class GameManager {
 		this.navigationButton = document.getElementById("navigationButton");
 		this.title = document.getElementById("navigationTitle");
 		this.contentContainer = document.getElementById("contentContainer");
-		this.goto(HOME_STATE);
+		this.presenting(HOME_STATE);
 
 		this.navigationButton.onclick=this.goto.bind(this, HOME_STATE);
 
 		console.log(gsap);
 	}
-	goto(state) {
+
+	presenting(state){
 		if (this.controller !== null) {
 			this.controller.delete();
 		}
@@ -67,6 +68,12 @@ export class GameManager {
 				break;
 			default:
 				break;
+		}
+	}
+
+	goto(state) {
+		if (this.controller !== null) {
+			this.controller.hide(this.presenting.bind(this, state));
 		}
 	}
 }
