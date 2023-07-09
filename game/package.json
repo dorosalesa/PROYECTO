@@ -9,10 +9,10 @@
   },
   "author": "Diana Rosales",
   "license": "ISC",
-  "dependencies": {
-    "gulp": "^4.0.2"
-  },
   "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
     "rollup": "^3.26.2"
   }
 }
