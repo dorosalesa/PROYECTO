@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "play": "gulp play",
-    "bundle": "gulp bundle"
+    "bundle": "gulp bundle",
+    "clean": "gulp clean"
   },
   "author": "Diana Rosales",
   "license": "ISC",

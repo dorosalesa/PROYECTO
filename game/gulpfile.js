@@ -1,22 +1,33 @@
-const rollup = require('rollup');
+const rollup = require("rollup");
+const { watch, series } = require("gulp");
 const gulp = require("gulp");
-const cleam = require("gulp-clean");
-const browsersync = require('browser-sync');
+const clean = require("gulp-clean");
+const browsersync = require("browser-sync");
 const server = browsersync.create();
 
+gulp.task("clean", () => {
+  return gulp.src("node_nodules").pipe(clean());
+});
 
-exports.bundle=() =>{
-    console.log('GULP - Running bundle function');};
+function reloadServer(cd) {
+  server.reload();
+  cd();
+}
 
-exports.play=()=>{
-    console.log('GULP - Running play function');
-    server.init({
-        server:{
-            baseDir:'.',
-        }
-    });
+function runServer() {
+  server.init({ server: { baseDir: '.' } });
+}
+
+function watchingFiles() {
+  watch("js/", { events: "all" });
+}
+
+exports.bundle = () => {
+  console.log("GULP - Running bundle function");
 };
 
-gulp.task('clean', function(){
-    return gulp.src("js/main.js").pipe(clean());
-});
+exports.play = () => {
+  console.log("GULP - Running play function");
+  runServer();
+  watchingFiles();
+};
