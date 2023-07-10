@@ -29,7 +29,11 @@ export class GameManager {
     this.presenting(HOME_STATE);
 
     this.contentContainer.addEventListener("home-button-click", (event) => {
-		this.presenting(event.detail.state);
+      this.presenting(event.detail.state);
+    });
+
+    this.contentContainer.addEventListener("hide-complete", (event) => {
+		console.log(event);
 	});
   }
 
