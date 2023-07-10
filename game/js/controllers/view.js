@@ -26,6 +26,14 @@ export class View {
 	}
 
 	hideComplete(state) {
-		this.callback(state);
+		var event = new CustomEvent('hide-complete',{
+			detail: {
+			  state: state,
+			},
+			bubbles: true,
+			cancelable: true,
+			composed: false,
+		  })
+		//this.callback(state);
 	}
 }

@@ -6,74 +6,79 @@ import { LoginController } from "./controllers/login/loginController.js";
 import { PlayController } from "./controllers/play/playController.js";
 import { CreditsController } from "./controllers/credits/creditsController.js";
 import {
-	HOME_STATE,
-	LOGIN_STATE,
-	PLAY_STATE,
-	DIFFICULTY_STATE,
-	THEMES_STATE,
-	SCORES_STATE,
-	CREDITS_STATE,
+  HOME_STATE,
+  LOGIN_STATE,
+  PLAY_STATE,
+  DIFFICULTY_STATE,
+  THEMES_STATE,
+  SCORES_STATE,
+  CREDITS_STATE,
 } from "./libs/constants.js";
 
 export class GameManager {
-	constructor() {
-		this.controller = null;
-		this.navigationContainer = document.getElementById("navigationContainer");
-		this.navigationButton = document.getElementById("navigationButton");
-		this.title = document.getElementById("navigationTitle");
-		this.contentContainer = document.getElementById("contentContainer");
-		this.presenting(HOME_STATE);
+  constructor() {
+    this.controller = null;
+    this.navigationContainer = document.getElementById("navigationContainer");
+    this.navigationButton = document.getElementById("navigationButton");
+    this.title = document.getElementById("navigationTitle");
+    this.contentContainer = document.getElementById("contentContainer");
 
-		this.navigationButton.onclick=this.goto.bind(this, HOME_STATE);
+    this.navigationButton.onclick = this.goto.bind(this, HOME_STATE);
 
-		console.log(gsap);
-	}
+    this.HomeController = new HomeController(this, this.contentContainer);
+    this.presenting(HOME_STATE);
 
-	presenting(state){
-		if (this.controller !== null) {
-			this.controller.delete();
-		}
+    this.contentContainer.addEventListener("home-button-click", (event) => {
+		this.presenting(event.detail.state);
+	});
+  }
 
-		this.navigationButton.classList.remove('hidden');
+  presenting(state) {
+    if (this.controller !== null) {
+      this.controller.delete();
+      this.controller = null;
+    }
 
-		switch (state) {
-			case HOME_STATE:
-				this.navigationButton.classList.add('hidden');
-				this.title.innerHTML = "Memory Game";
-				this.controller = new HomeController(this, this.contentContainer);
-				break;
-			case LOGIN_STATE:
-				this.title.innerHTML = "Log In";
-				this.controller = new LoginController(this, this.contentContainer);
-				break;
-			case PLAY_STATE:
-				this.title.innerHTML = "Play";
-				this.controller = new PlayController(this, this.contentContainer);
-				break;
-			case DIFFICULTY_STATE:
-				this.title.innerHTML = "Difficulty";
-				this.controller = new DifficultyController(this, this.contentContainer);
-				break;
-			case THEMES_STATE:
-				this.title.innerHTML = "Themes";
-				this.controller = new ThemesController(this, this.contentContainer);
-				break;
-			case SCORES_STATE:
-				this.title.innerHTML = "Scores";
-				this.controller = new ScoresController(this, this.contentContainer);
-				break;
-			case CREDITS_STATE:
-				this.title.innerHTML = "Credits";
-				this.controller = new CreditsController(this, this.contentContainer);
-				break;
-			default:
-				break;
-		}
-	}
+    this.navigationButton.classList.remove("hidden");
 
-	goto(state) {
-		if (this.controller !== null) {
-			this.controller.hide(this.presenting.bind(this, state));
-		}
-	}
+    switch (state) {
+      case HOME_STATE:
+        this.navigationButton.classList.add("hidden");
+        this.title.innerHTML = "Memory Game";
+        this.controller = new HomeController(this, this.contentContainer);
+        break;
+      case LOGIN_STATE:
+        this.title.innerHTML = "Log In";
+        this.controller = new LoginController(this, this.contentContainer);
+        break;
+      case PLAY_STATE:
+        this.title.innerHTML = "Play";
+        this.controller = new PlayController(this, this.contentContainer);
+        break;
+      case DIFFICULTY_STATE:
+        this.title.innerHTML = "Difficulty";
+        this.controller = new DifficultyController(this, this.contentContainer);
+        break;
+      case THEMES_STATE:
+        this.title.innerHTML = "Themes";
+        this.controller = new ThemesController(this, this.contentContainer);
+        break;
+      case SCORES_STATE:
+        this.title.innerHTML = "Scores";
+        this.controller = new ScoresController(this, this.contentContainer);
+        break;
+      case CREDITS_STATE:
+        this.title.innerHTML = "Credits";
+        this.controller = new CreditsController(this, this.contentContainer);
+        break;
+      default:
+        break;
+    }
+  }
+
+  goto(state) {
+    if (this.controller !== null) {
+      this.controller.hide(this.presenting.bind(this, state));
+    }
+  }
 }

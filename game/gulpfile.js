@@ -1,11 +1,11 @@
 const rollup = require("rollup");
-const { watch, series } = require("gulp");
+//const { series } = require("gulp");
 const gulp = require("gulp");
 const clean = require("gulp-clean");
 const browsersync = require("browser-sync");
 const server = browsersync.create();
 
-gulp.task("clean", () => {
+task("clean", () => {
   return gulp.src("node_nodules").pipe(clean());
 });
 
@@ -15,13 +15,13 @@ function reloadServer(cd) {
 }
 
 function runServer() {
-  server.init({ server: { baseDir: '.' } });
+  server.init({ server: { baseDir: "." } });
 }
 
 function watchingFiles() {
-  watch("js/", { events: "all" },reloadServer);
-  watch("css/", { events: "all" },reloadServer);
-  watch("*.html",reloadServer);
+  gulp.watch("js/", { events: "all" }, reloadServer);
+  gulp.watch("css/", { events: "all" }, reloadServer);
+  gulp.watch("*.html", reloadServer);
 }
 
 exports.bundle = () => {
