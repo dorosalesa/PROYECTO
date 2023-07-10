@@ -74,6 +74,7 @@ export class HomeView extends View {
     var event = new CustomEvent("home-button-click", {
       detail: {
         state: state,
+		view: this
       },
       bubbles: true,
       cancelable: true,

@@ -33,7 +33,7 @@ export class GameManager {
     });
 
     this.contentContainer.addEventListener("hide-complete", (event) => {
-		console.log(event);
+		this.presenting(event.detail.state);
 	});
   }
 
@@ -82,7 +82,9 @@ export class GameManager {
 
   goto(state) {
     if (this.controller !== null) {
-      this.controller.hide(this.presenting.bind(this, state));
-    }
+      this.controller.hide(state);
+    } else {
+		this.presenting(state);
+	}
   }
 }
