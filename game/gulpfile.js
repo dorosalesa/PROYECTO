@@ -19,7 +19,9 @@ function runServer() {
 }
 
 function watchingFiles() {
-  watch("js/", { events: "all" });
+  watch("js/", { events: "all" },reloadServer);
+  watch("css/", { events: "all" },reloadServer);
+  watch("*.html",reloadServer);
 }
 
 exports.bundle = () => {
