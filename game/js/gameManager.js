@@ -40,6 +40,16 @@ export class GameManager {
       this.presenting(event.detail.state);
     });
 
+    this.contentContainer.addEventListener('save-difficulty',(event) => {
+      this.difficulty=event.detail.difficulty;
+      this.saveDifficulty();
+    });
+
+    this.contentContainer.addEventListener('save-theme',(event) => {
+      this.theme=event.detail.theme;
+      this.saveTheme();
+    });
+
     this.loadDifficulty();
   }
 
@@ -94,16 +104,23 @@ export class GameManager {
     }
   }
 
-loadDifficulty(){
-  if(localStorage.getItem('difficulty')){
-    this.difficulty=localStorage.getItem('difficulty');
+  loadDifficulty() {
+    if (localStorage.getItem("difficulty")) {
+      this.difficulty = localStorage.getItem("difficulty");
+    }
   }
-}
 
-saveDifficulty(){
-  localStorage.setItem('difficulty', this.difficulty);
-}
+  saveDifficulty() {
+    localStorage.setItem("difficulty", this.difficulty);
+  }
 
+  loadTheme() {
+    if (localStorage.getItem("theme")) {
+      this.theme = localStorage.getItem("theme");
+    }
+  }
 
-
+  saveTheme() {
+    localStorage.setItem("theme", this.theme);
+  }
 }
