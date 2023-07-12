@@ -6,13 +6,19 @@ import {
   SCORES_STATE,
   CREDITS_STATE,
 } from "../../libs/constants.js";
-import { div, p } from "../../libs/html.js";
+import { div, p, img } from "../../libs/html.js";
 import { View } from "../view.js";
 
 export class HomeView extends View {
   constructor(controller, parent) {
     super(controller, parent);
     this.container.className = "homeView";
+
+    img({src: './images/logo.svg', className: 'homeView-logo'}, this.container);
+
+    p({innerHTML: 'High Scores', className:'game-text'}, this.container);
+
+    div({innerHTML: 'Scores Data', className: 'homeView-scores-widget'},this.container);
 
     var loginButton = div(
       {
@@ -32,13 +38,15 @@ export class HomeView extends View {
       this.container
     );
 
+    var buttonsContainer = div({className: 'homeView-buttonsContainer'}, this.container);
+
     var difficultyButton = div(
       {
         innerHTML: "Difficulty",
         className: "game-button",
         onclick: this.onButtonClick.bind(this, DIFFICULTY_STATE),
       },
-      this.container
+      buttonsContainer
     );
 
     var themesButton = div(
@@ -47,7 +55,7 @@ export class HomeView extends View {
         className: "game-button",
         onclick: this.onButtonClick.bind(this, THEMES_STATE),
       },
-      this.container
+      buttonsContainer
     );
 
     var scoresButton = div(
@@ -56,7 +64,7 @@ export class HomeView extends View {
         className: "game-button",
         onclick: this.onButtonClick.bind(this, SCORES_STATE),
       },
-      this.container
+      buttonsContainer
     );
 
     var creditsButton = div(
@@ -65,7 +73,7 @@ export class HomeView extends View {
         className: "game-button",
         onclick: this.onButtonClick.bind(this, CREDITS_STATE),
       },
-      this.container
+      buttonsContainer
     );
   }
 
