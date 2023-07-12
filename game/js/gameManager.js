@@ -13,10 +13,14 @@ import {
   THEMES_STATE,
   SCORES_STATE,
   CREDITS_STATE,
+  DIFFICULTY_MEDIUM,
+  THEME_FOOD,
 } from "./libs/constants.js";
 
 export class GameManager {
   constructor() {
+    this.difficulty = DIFFICULTY_MEDIUM;
+    this.theme = THEME_FOOD;
     this.controller = null;
     this.navigationContainer = document.getElementById("navigationContainer");
     this.navigationButton = document.getElementById("navigationButton");
@@ -33,8 +37,10 @@ export class GameManager {
     });
 
     this.contentContainer.addEventListener("hide-complete", (event) => {
-		this.presenting(event.detail.state);
-	});
+      this.presenting(event.detail.state);
+    });
+
+    this.loadDifficulty();
   }
 
   presenting(state) {
@@ -84,7 +90,20 @@ export class GameManager {
     if (this.controller !== null) {
       this.controller.hide(state);
     } else {
-		this.presenting(state);
-	}
+      this.presenting(state);
+    }
   }
+
+loadDifficulty(){
+  if(localStorage.getItem('difficulty')){
+    this.difficulty=localStorage.getItem('difficulty');
+  }
+}
+
+saveDifficulty(){
+  localStorage.setItem('difficulty', this.difficulty);
+}
+
+
+
 }
