@@ -8,6 +8,7 @@ export class View {
     this.container.style.transform = "translateX(300px)"; //'translateX(${window.innerWidth}px)'
     this.show();
   }
+
   delete() {
     this.parent.removeChild(this.container);
   }
