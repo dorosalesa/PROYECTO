@@ -40,13 +40,13 @@ export class GameManager {
       this.presenting(event.detail.state);
     });
 
-    this.contentContainer.addEventListener('save-difficulty',(event) => {
-      this.difficulty=event.detail.difficulty;
+    this.contentContainer.addEventListener("save-difficulty", (event) => {
+      this.difficulty = event.detail.difficulty;
       this.saveDifficulty();
     });
 
-    this.contentContainer.addEventListener('save-theme',(event) => {
-      this.theme=event.detail.theme;
+    this.contentContainer.addEventListener("save-theme", (event) => {
+      this.theme = event.detail.theme;
       this.saveTheme();
     });
 

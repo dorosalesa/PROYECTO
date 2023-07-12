@@ -1,24 +1,56 @@
+import {
+  DIFFICULTY_HIGH,
+  DIFFICULTY_LOW,
+  DIFFICULTY_MEDIUM,
+} from "../../libs/constants.js";
 import { View } from "../view.js";
+import { div } from "../../libs/html.js";
 
 export class DifficultyView extends View {
-	constructor(controller,parent) {
-		super(controller, parent);
-		this.container.className='difficultyView';
+  constructor(controller, parent) {
+    super(controller, parent);
+    this.container.className = "difficultyView";
 
-		var lowButton = document.createElement('div');
-		this.container.appendChild(lowButton);
-		lowButton.innerHTML='Low';
-		lowButton.className='game-button';
+    div(
+      {
+        innerHTML: "Low",
+        className: "game-button",
+        onclick: this.onButtonClick.bind(this, DIFFICULTY_LOW),
+      },
+      this.container
+    );
 
-		var mediumButton = document.createElement('div');
-		this.container.appendChild(mediumButton);
-		mediumButton.innerHTML='Medium';
-		mediumButton.className='game-button';
+    div(
+      {
+        innerHTML: "Medium",
+        className: "game-button",
+        onclick: this.onButtonClick.bind(this, DIFFICULTY_MEDIUM),
+      },
+      this.container
+    );
 
-		var highButton = document.createElement('div');
-		this.container.appendChild(highButton);
-		highButton.innerHTML='High';
-		highButton.className='game-button';
-		highButton.classList.add('active'); //a~adir f() selector difficultad para cambiar active class
-	}
+    div(
+      {
+        innerHTML: "High",
+        className: "game-button",
+        onclick: this.onButtonClick.bind(this, DIFFICULTY_HIGH),
+      },
+      this.container
+    );
+
+    //highButton.classList.add('active');
+    //a~adir f() selector difficultad para cambiar active class
+  }
+
+  onButtonClick(difficulty) {
+    var event = new CustomEvent("save-difficulty", {
+      detail: {
+        difficulty: difficulty,
+      },
+      bubbles: true,
+      cancelable: true,
+      composed: false,
+    });
+    this.container.dispatchEvent(event);
+  }
 }

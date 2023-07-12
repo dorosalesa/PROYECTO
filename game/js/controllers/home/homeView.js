@@ -14,11 +14,17 @@ export class HomeView extends View {
     super(controller, parent);
     this.container.className = "homeView";
 
-    img({src: './images/logo.svg', className: 'homeView-logo'}, this.container);
+    img(
+      { src: "./images/logo.svg", className: "homeView-logo" },
+      this.container
+    );
 
-    p({innerHTML: 'High Scores', className:'game-text'}, this.container);
+    p({ innerHTML: "High Scores", className: "game-text" }, this.container);
 
-    div({innerHTML: 'Scores Data', className: 'homeView-scores-widget'},this.container);
+    div(
+      { innerHTML: "Scores Data", className: "homeView-scores-widget" },
+      this.container
+    );
 
     var loginButton = div(
       {
@@ -38,7 +44,10 @@ export class HomeView extends View {
       this.container
     );
 
-    var buttonsContainer = div({className: 'homeView-buttonsContainer'}, this.container);
+    var buttonsContainer = div(
+      { className: "homeView-buttonsContainer" },
+      this.container
+    );
 
     var difficultyButton = div(
       {
@@ -77,12 +86,11 @@ export class HomeView extends View {
     );
   }
 
-  onButtonClick(state, event) {
+  onButtonClick(state) {
     //this.controller.goto(state);
     var event = new CustomEvent("home-button-click", {
       detail: {
         state: state,
-        view: this,
       },
       bubbles: true,
       cancelable: true,
