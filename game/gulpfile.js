@@ -5,7 +5,7 @@ const clean = require("gulp-clean");
 const browsersync = require("browser-sync");
 const server = browsersync.create();
 
-task("clean", () => {
+gulp.task("clean", () => {
   return gulp.src("node_nodules").pipe(clean());
 });
 
