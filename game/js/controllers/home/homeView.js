@@ -12,7 +12,7 @@ import { View } from "../view.js";
 export class HomeView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "homeView";
+    this.container.className = "homeView-elementsContainer";
 
     img(
       { src: "./images/logo.svg", className: "homeView-logo" },
