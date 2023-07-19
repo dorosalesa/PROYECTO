@@ -6,12 +6,13 @@ export class PlayController extends Controller {
   constructor(gameManager, parent) {
     super(gameManager);
     this.view = new PlayView(this, parent);
-    this.cards = [];
+    this.cards = null;
     this.service = new PlayService(this);
     this.service.getCards();
   }
 
   showCards(cards) {
-	this.view.showCards(cards);
+    this.cards = cards;
+    this.view.showCards(cards);
   }
 }
