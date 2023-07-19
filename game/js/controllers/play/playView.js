@@ -5,4 +5,8 @@ export class PlayView extends View {
 		super(controller, parent);
 		this.container.className='playView';
 	}
+
+	showCards(cards) {
+
+	}
 }

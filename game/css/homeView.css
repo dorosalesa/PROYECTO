@@ -11,3 +11,12 @@
 
     transform: translateX(380px);
 }
+
+.homeView-buttonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.homeView-buttonsContainer div{
+    margin: 10px;
+}
