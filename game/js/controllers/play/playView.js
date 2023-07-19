@@ -12,7 +12,7 @@ export class PlayView extends View {
   showCards(cards) {
     this.cardsContainer.innerHTML = "";
     cards.forEach((card) => {
-      div({ innerHTML: card.icon }, this.container);
+      div({ innerHTML: card.icon, className: "card" }, this.container);
     });
   }
 }
