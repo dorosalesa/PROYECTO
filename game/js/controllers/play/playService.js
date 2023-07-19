@@ -8,7 +8,7 @@ export class PlayService {
   getCards(difficulty, theme) {
     var cards = [];
     var url =
-      "https://us-central-cenfoprojectsbackend.cloudfunctions.net/app/cards/${difficulty}/type/${theme}";
+      "https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/cards/${difficulty}/type/${theme}";
     var request = new XMLHttpRequest();
     request.open("get", url);
     request.onload = () => {

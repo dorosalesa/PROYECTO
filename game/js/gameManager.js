@@ -29,8 +29,8 @@ export class GameManager {
 
     this.navigationButton.onclick = this.goto.bind(this, HOME_STATE);
 
-    this.HomeController = new HomeController(this, this.contentContainer);
-    this.presenting(HOME_STATE);
+    this.homeController = new HomeController(this, this.contentContainer);
+    this.presenting(PLAY_STATE);
 
     this.contentContainer.addEventListener("home-button-click", (event) => {
       this.presenting(event.detail.state);

@@ -6,13 +6,16 @@ export class PlayView extends View {
     super(controller, parent);
     this.container.id = "playView";
     this.container.className = "playView-elementsContainer";
-    this.cardsContainer = div({}, this.container);
+    this.cardsContainer = div(
+      { className: "playView-cardsContainer" },
+      this.container
+    );
   }
 
   showCards(cards) {
     this.cardsContainer.innerHTML = "";
     cards.forEach((card) => {
-      div({ innerHTML: card.icon, className: "card" }, this.container);
+      div({ innerHTML: card.icon, className: "card" }, this.cardsContainer);
     });
   }
 }

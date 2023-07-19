@@ -9,3 +9,10 @@
     justify-content: center;
     flex-direction: column;
 }
+
+.playView-cardsContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
