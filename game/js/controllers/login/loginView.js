@@ -1,25 +1,24 @@
 import { View } from "../view.js";
+import { input, h3, div } from "../../libs/html.js";
 
 export class LoginView extends View {
-	constructor(controller,parent) {
-		super(controller, parent);
-		this.container.className='loginView';
+  constructor(controller, parent) {
+    super(controller, parent);
+    this.container.className = "loginView";
 
-		var loginDirections = document.createElement('h3');
-		this.container.appendChild(loginDirections);
-		loginDirections.classList.add('loginDirections');
-		loginDirections.innerHTML='Enter your username: ';
+    this.loginDirections = h3(
+      { className: "loginDirections", innerHTML: "Enter your username: " },
+      this.container
+    );
 
-		var inputText = document.createElement('input');
-		this.container.appendChild(inputText);
-		inputText.classList.add('username');
-		inputText.id='username';
+    this.inputText = input(
+      { className: "username", id: "username", placeholder: "Username" },
+      this.container
+    );
 
-		var okeyButton = document.createElement('div');
-		this.container.appendChild(okeyButton);
-		okeyButton.innerHTML='Ok';
-		okeyButton.className='game-button';
-
-		
-	}
+    this.okeyButton = div(
+      { className: "game-button", innerHTML: "Ok" },
+      this.container
+    );
+  }
 }
