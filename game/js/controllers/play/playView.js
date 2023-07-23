@@ -6,8 +6,8 @@ export class PlayView extends View {
     super(controller, parent);
     this.container.id = "playView";
     this.container.className = "playView-elementsContainer";
-    this.hubContainer = div(
-      { className: "playView-hubContainer" },
+    this.hudContainer = div(
+      { className: "playView-hudContainer" },
       this.container
     );
     this.cardsContainer = div(
@@ -16,15 +16,19 @@ export class PlayView extends View {
     );
     this.clicksText = p(
       { innerHTML: "Clicks: 0", className: "playView-text" },
-      this.hubContainer
+      this.hudContainer
     );
     this.timerText = p(
       { innerHTML: "Time: 0", className: "playView-text" },
-      this.hubContainer
+      this.hudContainer
     );
     this.resetButton = div(
-      { innerHTML: "Reset", className: "playView-reset" },
-      this.hubContainer
+      {
+        innerHTML: "Reset",
+        className: "playView-reset",
+        onclick: this.onResetButton.bind(this),
+      },
+      this.hudContainer
     );
   }
 
@@ -33,5 +37,14 @@ export class PlayView extends View {
     cards.forEach((card) => {
       div({ innerHTML: card.icon, className: "card" }, this.cardsContainer);
     });
+  }
+
+  onResetButton() {
+    this.controller.resetGame();
+  }
+
+  updateHUD(clicks, time) {
+    this.clicksText.innerHTML = `Clicks: ${clicks}`;
+    this.timerText.innerHTML = `Time: ${time}`;
   }
 }
