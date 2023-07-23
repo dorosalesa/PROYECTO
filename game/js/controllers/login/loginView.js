@@ -12,13 +12,34 @@ export class LoginView extends View {
     );
 
     this.inputText = input(
-      { className: "username", id: "username", placeholder: "Username" },
+      { className: "username", placeholder: "Username" },
       this.container
     );
 
     this.okeyButton = div(
-      { className: "game-button", innerHTML: "Ok" },
+      {
+        className: "game-button",
+        innerHTML: "Ok",
+        onclick: this.onButtonClick.bind(this),
+      },
       this.container
     );
+  }
+
+  onButtonClick() {
+    let username = this.inputText.value;
+
+    if (username !== "") {
+      let event = new CustomEvent("username-entered", {
+        detail: {
+          username: username,
+        },
+        bubbles: true,
+        cancelable: true,
+        composed: false,
+      });
+      this.container.dispatchEvent(event);
+    } else {
+    }
   }
 }

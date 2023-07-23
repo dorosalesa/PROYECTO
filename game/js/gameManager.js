@@ -50,6 +50,12 @@ export class GameManager {
       this.saveTheme();
     });
 
+    this.contentContainer.addEventListener("username-entered", (event) => {
+      this.username = event.detail.username;
+      this.saveUsername();
+      this.presenting(HOME_STATE);
+    });
+
     this.loadDifficulty();
   }
 
@@ -122,5 +128,9 @@ export class GameManager {
 
   saveTheme() {
     localStorage.setItem("theme", this.theme);
+  }
+
+  saveUsername() {
+    localStorage.setItem("username", this.username);
   }
 }
