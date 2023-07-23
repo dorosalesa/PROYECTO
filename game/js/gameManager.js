@@ -30,7 +30,6 @@ export class GameManager {
     this.navigationButton.onclick = this.goto.bind(this, HOME_STATE);
 
     this.homeController = new HomeController(this, this.contentContainer);
-    this.presenting(HOME_STATE);
 
     this.contentContainer.addEventListener("home-button-click", (event) => {
       this.presenting(event.detail.state);
@@ -43,20 +42,26 @@ export class GameManager {
     this.contentContainer.addEventListener("save-difficulty", (event) => {
       this.difficulty = event.detail.difficulty;
       this.saveDifficulty();
+      this.goto(HOME_STATE);
     });
 
     this.contentContainer.addEventListener("save-theme", (event) => {
       this.theme = event.detail.theme;
       this.saveTheme();
+      this.goto(HOME_STATE);
     });
 
     this.contentContainer.addEventListener("username-entered", (event) => {
       this.username = event.detail.username;
       this.saveUsername();
-      this.presenting(HOME_STATE);
+      this.goto(HOME_STATE);
     });
 
     this.loadDifficulty();
+    this.loadTheme();
+    this.loadUsername();
+
+    this.presenting(HOME_STATE);
   }
 
   presenting(state) {
@@ -132,5 +137,11 @@ export class GameManager {
 
   saveUsername() {
     localStorage.setItem("username", this.username);
+  }
+
+  loadUsername() {
+    if (localStorage.getItem("username")) {
+      this.username = localStorage.getItem("username");
+    }
   }
 }
