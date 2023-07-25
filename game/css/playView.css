@@ -11,7 +11,7 @@
 }
 
 .playView-cardsContainer {
-  width: 60%;
+  width: 65%;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -19,7 +19,7 @@
 }
 
 .playView-hudContainer {
-  width: 60%;
+  width: 65%;
   display: flex;
   justify-content: space-between;
   align-content: center;
