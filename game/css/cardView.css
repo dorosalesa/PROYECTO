@@ -1,4 +1,4 @@
-.card {
+.cardView {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,7 @@
   height: calc(100%-5px);
 }
 
-.card-container {
+.cardView-container {
   background-color: var(--titleText-color);
   width: 100px;
   height: 100px;
@@ -19,14 +19,14 @@
   margin: 5px;
 }
 
-.card-hidden {
+.cardView-hidden {
   background-color: var(--buttonBackground-color);
 }
 
-.card-showing {
+.cardView-showing {
   background-color: var(--highlight-color);
 }
 
-.card-discovered {
+.cardView-discovered {
   background-color: var(--alternate-color);
 }

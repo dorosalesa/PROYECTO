@@ -1,5 +1,6 @@
 import { ControllerView } from "../controllerView.js";
 import { div, p } from "../../libs/html.js";
+import { CardView } from "../../views/cardView.js";
 
 export class PlayView extends ControllerView {
   constructor(controller, parent) {
@@ -35,8 +36,7 @@ export class PlayView extends ControllerView {
   showCards(cards) {
     this.cardsContainer.innerHTML = "";
     cards.forEach((card) => {
-      let container = div({ className: "card-container" }, this.cardsContainer);
-      div({ innerHTML: card.icon, className: "card card-hidden" }, container);
+      let cardView = new CardView(this.cardsContainer, card);
     });
   }
 
