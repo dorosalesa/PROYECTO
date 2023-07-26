@@ -15,10 +15,11 @@ export class PlayController extends Controller {
     this.time = 0;
     this.clicks = 0;
 
-    this.view.container.addEventListener(
-      "card-selected",
-      this.onCardSelected.bind(this)
-    );
+    window.addEventListener("card-selected", (event) => {
+      this.onCardSelected();
+    });
+
+    this.hiddenTimer = null;
   }
 
   showCards(cards) {
@@ -42,7 +43,7 @@ export class PlayController extends Controller {
   }
 
   onCardSelected() {
-    console.log(this.cards);
+    if (this.hiddenTimer !== null) return;
 
     var showCardEvent = new CustomEvent("show-card-on-selected", {
       detail: {
@@ -81,16 +82,21 @@ export class PlayController extends Controller {
 
         this.view.container.dispatchEvent(event);
       } else {
-        var event = new CustomEvent("hide-selected-card", {
-          detail: {
-            card: this.card,
-          },
-          bubbles: true,
-          cancelable: true,
-          composed: false,
-        });
+        this.hiddenTimer = window.setTimeout(() => {
+          var event = new CustomEvent("hide-selected-card", {
+            detail: {
+              card: this.card,
+            },
+            bubbles: true,
+            cancelable: true,
+            composed: false,
+          });
 
-        this.view.container.dispatchEvent(event);
+          this.view.container.dispatchEvent(event);
+          window.clearTimeout(this.hiddenTimer);
+          this.hiddenTimer = null;
+          //TODO: check ig game is complete
+        }, 900);
       }
     }
   }
