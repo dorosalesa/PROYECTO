@@ -20,7 +20,7 @@
 }
 
 .cardView-hidden {
-  background-color: var(--buttonBackground-color);
+  background-color: var(--title-color);
 }
 
 .cardView-selected {
@@ -28,5 +28,5 @@
 }
 
 .cardView-discovered {
-  background-color: var(--alternate-color);
+  background-color: var(--buttonText-color);
 }

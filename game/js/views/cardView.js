@@ -16,7 +16,7 @@ export class CardView extends View {
     this.container.onclick = this.onSelected.bind(this);
     //this.container.addEventListener("click", this.onSelected.bind(this));
 
-    this.iconContainer.innerHTML = this.card.icon; //desactivar
+    //this.iconContainer.innerHTML = this.card.icon; //desactivar
 
     window.addEventListener("show-card-on-selected", (event) => {
       this.showOnSelected();
@@ -44,15 +44,16 @@ export class CardView extends View {
 
   showOnSelected() {
     if (this.card.isSelected) {
-      //this.iconContainer.innerHTML = this.card.icon;
+      this.iconContainer.innerHTML = this.card.icon; //mostrar tarjetas
       this.iconContainer.classList.remove("cardView-hidden");
       this.iconContainer.classList.add("cardView-selected");
     }
   }
 
   showOnDiscovered() {
-    this.card.isDiscovered = true;
     if (this.card.isSelected) {
+      this.card.isDiscovered = true;
+
       this.iconContainer.classList.remove("cardView-hidden");
       this.iconContainer.classList.remove("cardView-selected");
       this.iconContainer.classList.add("cardView-discovered");
