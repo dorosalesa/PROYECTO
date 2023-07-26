@@ -3,10 +3,10 @@ import {
   DIFFICULTY_LOW,
   DIFFICULTY_MEDIUM,
 } from "../../libs/constants.js";
-import { View } from "../view.js";
+import { ControllerView } from "../controllerView.js";
 import { div } from "../../libs/html.js";
 
-export class DifficultyView extends View {
+export class DifficultyView extends ControllerView {
   constructor(controller, parent) {
     super(controller, parent);
     this.container.className = "difficultyView";

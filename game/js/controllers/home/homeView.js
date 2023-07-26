@@ -7,9 +7,9 @@ import {
   CREDITS_STATE,
 } from "../../libs/constants.js";
 import { div, p, img } from "../../libs/html.js";
-import { View } from "../view.js";
+import { ControllerView } from "../controllerView.js";
 
-export class HomeView extends View {
+export class HomeView extends ControllerView {
   constructor(controller, parent) {
     super(controller, parent);
     this.container.id = "homeView";

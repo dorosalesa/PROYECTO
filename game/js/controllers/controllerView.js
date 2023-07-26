@@ -1,6 +1,6 @@
 import { div } from "../libs/html.js";
 
-export class View {
+export class ControllerView {
   constructor(controller, parent) {
     this.controller = controller;
     this.parent = parent;
@@ -39,3 +39,5 @@ export class View {
     this.container.dispatchEvent(event);
   }
 }
+
+//controller view, fadeContainer, controllerView.css para efectos de display
