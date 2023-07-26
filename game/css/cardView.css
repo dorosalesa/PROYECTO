@@ -5,8 +5,8 @@
   font-size: 50px;
   padding: 5px;
   border: solid 2px var(--buttonText-color);
-  width: calc(100%-5px);
-  height: calc(100%-5px);
+  width: 75px;
+  height: 75px;
 }
 
 .cardView-container {
@@ -23,7 +23,7 @@
   background-color: var(--buttonBackground-color);
 }
 
-.cardView-showing {
+.cardView-selected {
   background-color: var(--highlight-color);
 }
 

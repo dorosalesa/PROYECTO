@@ -8,9 +8,39 @@ export class CardView extends View {
 
     this.container.className = "cardView-container";
 
-    div(
-      { innerHTML: card.icon, className: "cardView cardView-hidden" },
+    this.iconContainer = div(
+      { className: "cardView cardView-hidden" },
       this.container
     );
+
+    this.container.onclick = this.onSelected.bind(this);
+
+    this.container.addEventListener(
+      "show-card",
+      this.showOnSelected.bind(this)
+    );
+  }
+
+  onSelected() {
+    this.card.isSelected = true;
+
+    var event = new CustomEvent("card-selected", {
+      detail: {
+        card: this.card,
+      },
+      bubbles: true,
+      cancelable: true,
+      composed: false,
+    });
+
+    this.container.dispatchEvent(event);
+  }
+
+  showOnSelected() {
+    if (this.card.isSelected) {
+      this.iconContainer.innerHTML = this.card.icon;
+      this.iconContainer.classList.remove("cardView-hidden");
+      this.iconContainer.classList.add("cardView-selected");
+    }
   }
 }
