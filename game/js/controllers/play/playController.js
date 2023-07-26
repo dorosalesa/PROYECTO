@@ -41,15 +41,10 @@ export class PlayController extends Controller {
     this.view.updateHUD(this.clicks, this.time);
   }
 
-  onCardSelected(event) {
+  onCardSelected() {
     console.log(this.cards);
 
-    this.cards.forEach((card) => {
-      if (card.isSelected) {
-      }
-    });
-
-    var showCardEvent = new CustomEvent("show-card", {
+    var showCardEvent = new CustomEvent("show-card-on-selected", {
       detail: {
         card: null,
       },
@@ -59,5 +54,33 @@ export class PlayController extends Controller {
     });
 
     this.view.container.dispatchEvent(showCardEvent);
+
+    let cardSelected1 = null;
+    let cardSelected2 = null;
+
+    this.cards.forEach((card) => {
+      if (!card.isDiscovered) {
+        if (cardSelected1 === null && card.isSelected) {
+          cardSelected1 = card;
+        } else if (cardSelected2 === null && card.isSelected) {
+          cardSelected2 = card;
+        }
+      }
+    });
+
+    if (cardSelected1 !== null && cardSelected2 !== null) {
+      if (cardSelected1.id === cardSelected2.id) {
+        var event = new CustomEvent("show-card-on-discovered", {
+          detail: {
+            card: this.card,
+          },
+          bubbles: true,
+          cancelable: true,
+          composed: false,
+        });
+
+        this.view.container.dispatchEvent(event);
+      }
+    }
   }
 }
