@@ -36,7 +36,7 @@ export class PlayView extends View {
     this.cardsContainer.innerHTML = "";
     cards.forEach((card) => {
       let container = div({ className: "card-container" }, this.cardsContainer);
-      div({ innerHTML: card.icon, className: "card" }, container);
+      div({ innerHTML: card.icon, className: "card card-hidden" }, container);
     });
   }
 

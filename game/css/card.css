@@ -18,3 +18,15 @@
   justify-content: center;
   margin: 5px;
 }
+
+.card-hidden {
+  background-color: var(--buttonBackground-color);
+}
+
+.card-showing {
+  background-color: var(--highlight-color);
+}
+
+.card-discovered {
+  background-color: var(--alternate-color);
+}
