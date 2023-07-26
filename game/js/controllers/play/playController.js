@@ -80,6 +80,17 @@ export class PlayController extends Controller {
         });
 
         this.view.container.dispatchEvent(event);
+      } else {
+        var event = new CustomEvent("hide-selected-card", {
+          detail: {
+            card: this.card,
+          },
+          bubbles: true,
+          cancelable: true,
+          composed: false,
+        });
+
+        this.view.container.dispatchEvent(event);
       }
     }
   }

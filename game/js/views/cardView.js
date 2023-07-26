@@ -16,14 +16,16 @@ export class CardView extends View {
     this.container.onclick = this.onSelected.bind(this);
     //this.container.addEventListener("click", this.onSelected.bind(this));
 
-    //this.iconContainer.innerHTML = this.card.icon; //desactivar
-
     window.addEventListener("show-card-on-selected", (event) => {
       this.showOnSelected();
     });
 
     window.addEventListener("show-card-on-discovered", (event) => {
       this.showOnDiscovered();
+    });
+
+    window.addEventListener("hide-selected-card", (event) => {
+      this.hide();
     });
   }
 
@@ -51,7 +53,7 @@ export class CardView extends View {
   }
 
   showOnDiscovered() {
-    if (this.card.isSelected) {
+    if (this.card.isSelected && !this.card.isDiscovered) {
       this.card.isDiscovered = true;
 
       this.iconContainer.classList.remove("cardView-hidden");
@@ -59,6 +61,15 @@ export class CardView extends View {
       this.iconContainer.classList.add("cardView-discovered");
 
       this.container.onclick = null;
+    }
+  }
+
+  hide() {
+    if (this.card.isSelected && !this.card.isDiscovered) {
+      this.card.isSelected = false;
+      this.iconContainer.innerHTML = "";
+      this.iconContainer.classList.add("cardView-hidden");
+      this.iconContainer.classList.remove("cardView-selected");
     }
   }
 }
