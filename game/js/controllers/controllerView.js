@@ -1,10 +1,10 @@
-import { div } from "../libs/html.js";
+import { View } from "../views/view.js";
 
-export class ControllerView {
+export class ControllerView extends View {
   constructor(controller, parent) {
+    super(parent);
     this.controller = controller;
-    this.parent = parent;
-    this.container = div({}, this.parent);
+
     this.container.style.transform = "translateX(300px)"; //'translateX(${window.innerWidth}px)'
     this.show();
   }
