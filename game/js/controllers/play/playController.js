@@ -95,9 +95,18 @@ export class PlayController extends Controller {
           this.view.container.dispatchEvent(event);
           window.clearTimeout(this.hiddenTimer);
           this.hiddenTimer = null;
-          //TODO: check ig game is complete
         }, 900);
       }
     }
+  }
+
+  checkGameComplete() {
+    for (let i = 0; i < this.cards.length; i++) {
+      const card = this.cards[i];
+      if (card.isDiscovered) {
+        returnfalse;
+      }
+    }
+    return true;
   }
 }
