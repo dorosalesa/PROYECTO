@@ -95,6 +95,10 @@ export class PlayController extends Controller {
           this.view.container.dispatchEvent(event);
           window.clearTimeout(this.hiddenTimer);
           this.hiddenTimer = null;
+          if (this.checkGameComplete()) {
+            window.clearInterval(this.timer);
+            console.log("game complete");
+          }
         }, 900);
       }
     }
