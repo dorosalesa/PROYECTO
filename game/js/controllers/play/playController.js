@@ -44,6 +44,9 @@ export class PlayController extends Controller {
   onCardSelected() {
     if (this.hiddenTimer !== null) return;
 
+    this.clicks += 1;
+    this.view.updateHUD(this.clicks, this.time);
+
     var showCardEvent = new CustomEvent("show-card-on-selected", {
       detail: {
         card: null,
@@ -83,6 +86,13 @@ export class PlayController extends Controller {
 
         if (this.checkGameComplete()) {
           this.killGameTimer();
+          let score = this.clicks * this.time;
+          this.service.sendScore(
+            score,
+            this.clicks,
+            this.time,
+            this.gameManager.username
+          );
           console.log("game complete");
         }
       } else {
