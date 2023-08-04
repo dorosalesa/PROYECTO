@@ -1,8 +1,9 @@
+import { Service } from "../service.js";
 import { Card } from "../../models/card.js";
 
-export class PlayService {
+export class PlayService extends Service {
   constructor(controller) {
-    this.controller = controller;
+    super(controller);
   }
 
   getCards(difficulty, theme) {

@@ -5,4 +5,8 @@ export class ScoresView extends ControllerView {
     super(controller, parent);
     this.container.className = "scoresView";
   }
+
+  showScores(scores) {
+    this.scores.forEach((score) => {});
+  }
 }
