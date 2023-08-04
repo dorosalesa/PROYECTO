@@ -1,4 +1,5 @@
 import { Service } from "../service.js";
+import { Score } from "../../models/score.js";
 
 export class ScoresService extends Service {
   constructor(controller) {

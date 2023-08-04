@@ -1,4 +1,5 @@
 import { ControllerView } from "../controllerView.js";
+import { ScoreView } from "./scoreView.js";
 
 export class ScoresView extends ControllerView {
   constructor(controller, parent) {
@@ -7,6 +8,8 @@ export class ScoresView extends ControllerView {
   }
 
   showScores(scores) {
-    this.scores.forEach((score) => {});
+    scores.forEach((score) => {
+      let scoreView = new ScoreView(this.container, score);
+    });
   }
 }

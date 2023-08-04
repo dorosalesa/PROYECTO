@@ -1,2 +1,24 @@
 .scoreView {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.scoreView-nameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scoreView-valuesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scoreView-valueContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
