@@ -76,7 +76,7 @@ export class GameManager {
     switch (state) {
       case HOME_STATE:
         this.navigationButton.classList.add("hidden");
-        this.title.innerHTML = "Memory Game";
+        this.title.innerHTML = "";
         // this.controller = new HomeController(this, this.contentContainer);
         break;
       case LOGIN_STATE:

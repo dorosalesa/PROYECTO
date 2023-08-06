@@ -15,16 +15,11 @@ export class HomeView extends ControllerView {
     this.container.id = "homeView";
     this.container.className = "homeView-elementsContainer";
 
+    var logoContainer = div({ className: "logoContainer" }, this.container);
+
     img(
       { src: "./images/logo.svg", className: "homeView-logo" },
-      this.container
-    );
-
-    p({ innerHTML: "High Scores", className: "game-text" }, this.container);
-
-    div(
-      { innerHTML: "Scores Data", className: "homeView-scores-widget" },
-      this.container
+      logoContainer
     );
 
     var loginButton = div(

@@ -1,16 +1,32 @@
 import { ControllerView } from "../controllerView.js";
+import { h3, h4 } from "../../libs/html.js";
 
 export class CreditsView extends ControllerView {
   constructor(controller, parent) {
     super(controller, parent);
     this.container.className = "creditsView";
 
-    var title = document.createElement("h3");
-    title.innerHTML = "Proyecto Juego Memoria";
-    this.container.appendChild(title);
+    h3(
+      {
+        innerHTML: "Programación Web Orientada a Objetos",
+        className: "creditsView-h3",
+      },
+      this.container
+    );
 
-    var text = document.createElement("h4");
-    text.innerHTML = "Creado por: Diana Rosales";
-    this.container.appendChild(text);
+    h3(
+      { innerHTML: "Proyecto: Juego Memoria", className: "creditsView-h3" },
+      this.container
+    );
+
+    h4(
+      { innerHTML: "Creado por: Diana Rosales", className: "creditsView-h4" },
+      this.container
+    );
+
+    h4(
+      { innerHTML: "Cenfotec 2023", className: "creditsView-h4" },
+      this.container
+    );
   }
 }

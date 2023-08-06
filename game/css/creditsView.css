@@ -1,11 +1,27 @@
-.creditsView{
-    width: 100%;
-    height: 100%;
-    background-color: var(--background-color);
-    
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.creditsView {
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color);
+
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.creditsView-h3 {
+  font-family: var(--titleText-font);
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--buttonText-color);
+}
+
+.creditsView-h4 {
+  font-family: var(--subtitleText-font);
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--buttonBackground-color);
 }
