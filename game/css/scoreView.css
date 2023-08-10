@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
 
-  width: 80%;
+  width: 70%;
   background-color: var(--buttonBackground-color);
   margin: 5px;
 }
@@ -13,6 +13,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: var(--subtitleText-font);
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .scoreView-valuesContainer {
@@ -21,7 +24,7 @@
   align-items: center;
   flex-direction: row;
   width: 100%;
-  font-family: var(--titleText-font);
+  font-family: var(--subtitleText-font);
 }
 
 .scoreView-valueContainer {
@@ -30,4 +33,8 @@
   align-items: center;
   flex-direction: column;
   font-family: var(--subtitleText-font);
+}
+
+p {
+  margin: 0px;
 }

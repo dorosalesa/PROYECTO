@@ -14,15 +14,19 @@
 }
 
 .playView-cardsContainer {
-  width: 65%;
-  display: flex;
-  justify-content: center;
+  /* max-width: 70%; */
+  /* display: flex;
+  
   align-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-around;
 }
 
 .playView-hudContainer {
   margin-top: 50px;
+  margin-bottom: 20px;
   width: 65%;
   display: flex;
   justify-content: space-between;
