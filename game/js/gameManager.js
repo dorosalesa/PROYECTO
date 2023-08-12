@@ -71,11 +71,11 @@ export class GameManager {
       this.controller = null;
     }
 
-    this.navigationButton.classList.remove("hidden");
+    this.navigationContainer.classList.remove("hidden");
 
     switch (state) {
       case HOME_STATE:
-        this.navigationButton.classList.add("hidden");
+        this.navigationContainer.classList.add("hidden");
         this.title.innerHTML = "";
         // this.controller = new HomeController(this, this.contentContainer);
         break;

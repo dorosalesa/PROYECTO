@@ -48,5 +48,6 @@ export class ThemesView extends ControllerView {
       composed: false,
     });
     this.container.dispatchEvent(event);
+    div.setAttribute("class", "active");
   }
 }

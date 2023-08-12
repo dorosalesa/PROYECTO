@@ -18,8 +18,14 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+  background-color: var(--buttonText-color);
+  padding: 20px;
 }
 
 .homeView-buttonsContainer div {
   width: 35%;
+}
+
+.logoContainer img {
+  height: 600px;
 }
