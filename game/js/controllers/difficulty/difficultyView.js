@@ -43,6 +43,9 @@ export class DifficultyView extends ControllerView {
   }
 
   onButtonClick(difficulty) {
+    // if (localStorage.getItem("difficulty")) {
+    //   this.difficulty = localStorage.getItem("difficulty");
+    // }
     var event = new CustomEvent("save-difficulty", {
       detail: {
         difficulty: difficulty,

@@ -57,8 +57,7 @@ body {
 
 .navigationContainer {
   height: var(--navigationContainer-height);
-  background-color: var(--background-color);
-  /* background-color: #7d8f95; */
+  background-color: var(--buttonText-color);
   width: 100%;
   display: flex;
   align-items: center;
@@ -66,18 +65,23 @@ body {
 
 .navigationButton button {
   font: var(--subtitleText-font);
-  font-size: 28px;
+  font-size: 30px !important;
   font-weight: bold;
   background-color: var(--buttonBackground-color);
   border: none;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
   font-family: var(--subtitleText-font);
-  margin: 5px;
+  margin: 15px;
   font-weight: bold;
   font-size: 16px;
   color: var(--titleText-color);
   cursor: pointer;
+}
+
+.navigationButton button:hover {
+  background-color: var(--highlight-color);
+  border: solid var(--titleText-color);
 }
 
 .navigationButton {
@@ -96,6 +100,6 @@ body {
 .navigationTitle p {
   text-align: center;
   font-family: var(--titleText-font);
-  font-size: 32px;
+  font-size: 40px;
   font-weight: bold;
 }
