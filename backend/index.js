@@ -68,7 +68,13 @@ app.get("/cards/:difficulty/:theme", (request, response) => {
     if (request.params.difficulty !== null && request.params.theme !== null) {
       const difficulty = request.params.difficulty;
       const theme = request.params.theme;
-      data.cards = getCards(difficulty);
+      var cards = getCards(difficulty);
+      cards.forEach((card) => {
+        data.cards.push(card);
+      });
+      cards.forEach((card) => {
+        data.cards.push(card);
+      });
     }
   }
   response.send(JSON.stringify(data));
@@ -86,25 +92,26 @@ function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function getIcon(icon) {
-  let newIcon = randomInteger(0, food.length - 1);
-  if (icon === newIcon) {
-    return getIcon(icon);
+function getIconIndex(iconIndex) {
+  let newIconIndex = randomInteger(0, food.length - 1);
+  if (iconIndex === newIconIndex) {
+    return getIconIndex(iconIndex);
   }
-  return newIcon;
+  return newIconIndex;
 }
 
 function getCards(difficulty) {
   var cards = [];
   for (let i = 0; i < difficulty; i++) {
-    var index = getIcon("");
+    var iconIndex = getIconIndex(-1);
     var card = {
       isDiscovered: false,
-      icon: food[index],
-      id: index,
+      icon: food[iconIndex],
+      id: iconIndex,
     };
     cards.push(card);
   }
+  console.log(cards);
   return cards;
 }
 
