@@ -7,6 +7,7 @@
   border: solid 2px var(--buttonText-color);
   width: 90px;
   height: 90px;
+  border-radius: 15px;
 }
 
 .cardView-container {
@@ -17,6 +18,7 @@
   align-items: center;
   justify-content: center;
   margin: 5px;
+  border-radius: 15px;
 }
 
 .cardView-hidden {
