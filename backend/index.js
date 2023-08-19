@@ -75,6 +75,8 @@ app.get("/cards/:difficulty/:theme", (request, response) => {
       cards.forEach((card) => {
         data.cards.push(card);
       });
+
+      shuffleArray(data.cards);
     }
   }
   response.send(JSON.stringify(data));
@@ -113,6 +115,13 @@ function getCards(difficulty) {
   }
   console.log(cards);
   return cards;
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
 
 // function getIcons(icons) {
