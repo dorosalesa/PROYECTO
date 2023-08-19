@@ -68,21 +68,7 @@ app.get("/cards/:difficulty/:theme", (request, response) => {
     if (request.params.difficulty !== null && request.params.theme !== null) {
       const difficulty = request.params.difficulty;
       const theme = request.params.theme;
-
-      return; 
-
-      for (let i = 0; i < difficulty; i++) {
-        data.cards.push({
-          isDiscovered: false,
-          icon: getIcon(),
-          id: i + 1,
-        });
-        data.cards.push({
-          isDiscovered: false,
-          icon: getIcon(),
-          id: i + 1,
-        });
-      }
+      data.cards = getCards(difficulty);
     }
   }
   response.send(JSON.stringify(data));
@@ -108,13 +94,27 @@ function getIcon(icon) {
   return newIcon;
 }
 
-function getIcons(icons) {
-  var icons = [];
-
-  var icon = getIcon('');
-  icons.push(icon);
-  return icons;
+function getCards(difficulty) {
+  var cards = [];
+  for (let i = 0; i < difficulty; i++) {
+    var index = getIcon("");
+    var card = {
+      isDiscovered: false,
+      icon: food[index],
+      id: index,
+    };
+    cards.push(card);
+  }
+  return cards;
 }
+
+// function getIcons(icons) {
+//   var icons = [];
+
+//   var icon = getIcon('');
+//   icons.push(icon);
+//   return icons;
+// }
 
 /*var cards = `
 {
