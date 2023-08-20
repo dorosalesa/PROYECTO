@@ -125,7 +125,7 @@ function getCards(difficulty, theme) {
     var iconIndex = getIconIndex(-1, iconList);
     var card = {
       isDiscovered: false,
-      icon: food[iconIndex],
+      icon: iconList[iconIndex],
       id: iconIndex,
     };
     cards.push(card);
@@ -140,98 +140,3 @@ function shuffleArray(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
 }
-
-// function getIcons(icons) {
-//   var icons = [];
-
-//   var icon = getIcon('');
-//   icons.push(icon);
-//   return icons;
-// }
-
-/*var cards = `
-{
-  "cards": [
-      {
-          "isDiscovered": false,
-          "icon": "🥜",
-          "id": 49
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🍏",
-          "id": 0
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🥝",
-          "id": 16
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🥝",
-          "id": 16
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🥭",
-          "id": 13
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🥭",
-          "id": 13
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🍉",
-          "id": 6
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🥒",
-          "id": 22
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🍹",
-          "id": 56
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🥜",
-          "id": 49
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🍹",
-          "id": 56
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🍏",
-          "id": 0
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🥎",
-          "id": 53
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🍉",
-          "id": 6
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🥎",
-          "id": 53
-      },
-      {
-          "isDiscovered": false,
-          "icon": "🥒",
-          "id": 22
-      }
-  ]
-}
-`;*/

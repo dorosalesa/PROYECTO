@@ -14,13 +14,13 @@ import {
   SCORES_STATE,
   CREDITS_STATE,
   DIFFICULTY_MEDIUM,
-  THEME_FOOD,
+  THEME_FRUITS,
 } from "./libs/constants.js";
 
 export class GameManager {
   constructor() {
     this.difficulty = DIFFICULTY_MEDIUM;
-    this.theme = THEME_FOOD;
+    this.theme = THEME_FRUITS;
     this.username = "";
     this.controller = null;
     this.navigationContainer = document.getElementById("navigationContainer");

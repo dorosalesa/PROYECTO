@@ -1,4 +1,8 @@
-import { THEME_FACES, THEME_FLAGS, THEME_FOOD } from "../../libs/constants.js";
+import {
+  THEME_FRUITS,
+  THEME_ANIMALS,
+  THEME_SHAPES,
+} from "../../libs/constants.js";
 import { ControllerView } from "../controllerView.js";
 import { div } from "../../libs/html.js";
 
