@@ -5,7 +5,7 @@ const port = 3000;
 
 app.use(cors());
 
-const food = [
+const fruits = [
   "🍇",
   "🍉",
   "🍊",
@@ -68,7 +68,7 @@ app.get("/cards/:difficulty/:theme", (request, response) => {
     if (request.params.difficulty !== null && request.params.theme !== null) {
       const difficulty = request.params.difficulty;
       const theme = request.params.theme;
-      var cards = getCards(difficulty);
+      var cards = getCards(difficulty, theme);
       cards.forEach((card) => {
         data.cards.push(card);
       });
@@ -94,18 +94,35 @@ function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function getIconIndex(iconIndex) {
-  let newIconIndex = randomInteger(0, food.length - 1);
+function getIconIndex(iconIndex, iconList) {
+  let newIconIndex = randomInteger(0, iconList.length - 1);
   if (iconIndex === newIconIndex) {
-    return getIconIndex(iconIndex);
+    return getIconIndex(iconIndex, iconList);
   }
   return newIconIndex;
 }
 
-function getCards(difficulty) {
+function getCards(difficulty, theme) {
   var cards = [];
+
+  var iconList = null;
+
+  switch (theme) {
+    case "fruits":
+      iconList = fruits;
+      break;
+    case "animals":
+      iconList = animals;
+      break;
+    case "shapes":
+      iconList = shapes;
+      break;
+    default:
+      iconList = fruits;
+      break;
+  }
   for (let i = 0; i < difficulty; i++) {
-    var iconIndex = getIconIndex(-1);
+    var iconIndex = getIconIndex(-1, iconList);
     var card = {
       isDiscovered: false,
       icon: food[iconIndex],

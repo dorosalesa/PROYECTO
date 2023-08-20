@@ -9,27 +9,27 @@ export class ThemesView extends ControllerView {
 
     div(
       {
-        innerHTML: "Faces",
+        innerHTML: "Fruits",
         className: "game-button",
-        onclick: this.onButtonClick.bind(this, THEME_FACES),
+        onclick: this.onButtonClick.bind(this, THEME_FRUITS),
       },
       this.container
     );
 
     div(
       {
-        innerHTML: "Flags",
+        innerHTML: "Animals",
         className: "game-button",
-        onclick: this.onButtonClick.bind(this, THEME_FLAGS),
+        onclick: this.onButtonClick.bind(this, THEME_ANIMALS),
       },
       this.container
     );
 
     div(
       {
-        innerHTML: "Food",
+        innerHTML: "Shapes",
         className: "game-button",
-        onclick: this.onButtonClick.bind(this, THEME_FOOD),
+        onclick: this.onButtonClick.bind(this, THEME_SHAPES),
       },
       this.container
     );
