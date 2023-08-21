@@ -42,7 +42,7 @@
   }
 }
 
-@media only screen and (max-height: 300px) {
+@media only screen and (max-height: 645px) {
   .logoContainer img {
     display: none;
   }
