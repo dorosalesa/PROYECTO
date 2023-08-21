@@ -36,9 +36,8 @@
   }
 }
 
-@media only screen and (max-height: 800px) {
-  .logoContainer {
-    display: absolute;
-    z-index: -1;
+@media only screen and (max-height: 700px) {
+  .logoContainer img {
+    height: 300px;
   }
 }
