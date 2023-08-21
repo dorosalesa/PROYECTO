@@ -86,9 +86,9 @@ app.get("/scores", (request, response) => {
   response.send("Hello Scores!");
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`);
+// });
 
 function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -140,3 +140,9 @@ function shuffleArray(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
 }
+
+module.exports = app;
+
+app.get("/", (req, res) => {
+  res.send("Api Funcionando");
+});
