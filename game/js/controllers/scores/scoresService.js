@@ -8,7 +8,7 @@ export class ScoresService extends Service {
 
   getScores() {
     var scores = [];
-    var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/scores`;
+    var url = `https://memorygame-67ac9-default-rtdb.firebaseio.com//app/scores`;
     var request = new XMLHttpRequest();
     request.open("get", url);
     request.onload = () => {
