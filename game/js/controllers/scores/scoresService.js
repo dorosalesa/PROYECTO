@@ -8,7 +8,7 @@ export class ScoresService extends Service {
 
   getScores() {
     var scores = [];
-    var url = `https://memorygame-67ac9-default-rtdb.firebaseio.com//app/scores`;
+    var url = `https://diana-memorygame.vercel.app/scores`;
     var request = new XMLHttpRequest();
     request.open("get", url);
     request.onload = () => {
