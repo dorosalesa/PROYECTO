@@ -33,6 +33,19 @@
   background-color: var(--buttonText-color);
 }
 
+@media only screen and (min-width: 1000px) {
+  .cardView {
+    width: 110px;
+    height: 110px;
+    font-size: 70px;
+  }
+
+  .cardView-container {
+    width: 140px;
+    height: 140px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .cardView {
     width: 60px;
@@ -46,15 +59,15 @@
   }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (max-width: 300px) {
   .cardView {
-    width: 110px;
-    height: 110px;
-    font-size: 70px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
   }
 
   .cardView-container {
-    width: 140px;
-    height: 140px;
+    width: 65px;
+    height: 65px;
   }
 }

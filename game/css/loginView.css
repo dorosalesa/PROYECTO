@@ -21,7 +21,6 @@
   padding: 5px;
   text-align: center;
   margin: 50px;
-  margin-bottom: 100px;
   color: var(--titleText-color);
   border-color: var(--buttonText-color);
 }
@@ -47,5 +46,9 @@ h3 {
 @media only screen and (max-height: 667px) {
   .loginView {
     padding-top: 0px;
+  }
+  .username {
+    font-size: 20px !important;
+    margin: 10px;
   }
 }
