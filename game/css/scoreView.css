@@ -7,6 +7,7 @@
   width: 70%;
   background-color: var(--buttonBackground-color);
   margin: 5px;
+  border-radius: 15px;
 }
 
 .scoreView-nameContainer {
@@ -14,6 +15,7 @@
   justify-content: center;
   align-items: center;
   font-family: var(--subtitleText-font);
+  color: var(--titleText-color);
   font-size: 20px;
   font-weight: bold;
 }
@@ -25,6 +27,7 @@
   flex-direction: row;
   width: 100%;
   font-family: var(--subtitleText-font);
+  color: var(--buttonText-color);
 }
 
 .scoreView-valueContainer {
