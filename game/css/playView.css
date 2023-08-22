@@ -68,6 +68,14 @@
 
 .swal2-popup {
   font-family: var(--subtitleText-font);
+  background-color: var(--background-color);
+  color: var(--buttonText-color);
+}
+
+.swal2-confirm {
+  background-color: var(--buttonBackground-color);
+  color: var(--buttonText-color);
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 600px) {
