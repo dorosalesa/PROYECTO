@@ -5,7 +5,7 @@ const port = 3000;
 
 app.use(cors());
 
-const dbUrl = "https://memorygame-67ac9-default-rtdb.firebaseio.com/";
+const dataBaseURL = "https://memorygame-67ac9-default-rtdb.firebaseio.com/";
 
 const fruits = [
   "🍇",
