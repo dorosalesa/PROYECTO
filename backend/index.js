@@ -132,7 +132,7 @@ function getCards(difficulty, theme) {
       iconList = fruits;
       break;
   }
-  for (let i = 0; i < dificulty; i++) {
+  for (let i = 0; i < difficulty; i++) {
     var iconIndex = getIconIndex(-1, iconList.length, cards);
     var card = {
       isDiscovered: false,
