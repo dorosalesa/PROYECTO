@@ -96,11 +96,20 @@ function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function getIconIndex(iconIndex, iconList) {
-  let newIconIndex = randomInteger(0, iconList.length - 1);
-  if (iconIndex === newIconIndex) {
-    return getIconIndex(iconIndex, iconList);
+function getIconIndex(iconIndex, length, cards) {
+  let newIconIndex = randomInteger(0, length - 1);
+
+  for (let i = 0; i < cards.length; i++) {
+    const card = cards[i];
+    if (card.id === newIconIndex) {
+      return getIconIndex(iconIndex, length, cards);
+    }
   }
+
+  if (iconIndex === newIconIndex) {
+    return getIconIndex(iconIndex, length, cards);
+  }
+
   return newIconIndex;
 }
 
@@ -123,8 +132,8 @@ function getCards(difficulty, theme) {
       iconList = fruits;
       break;
   }
-  for (let i = 0; i < difficulty; i++) {
-    var iconIndex = getIconIndex(-1, iconList);
+  for (let i = 0; i < dificulty; i++) {
+    var iconIndex = getIconIndex(-1, iconList.length, cards);
     var card = {
       isDiscovered: false,
       icon: iconList[iconIndex],
