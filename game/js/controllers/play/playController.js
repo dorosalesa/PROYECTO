@@ -86,7 +86,8 @@ export class PlayController extends Controller {
 
         if (this.checkGameComplete()) {
           this.killGameTimer();
-          let score = this.clicks * this.time; // this.clicks + this.time
+          let score = this.clicks * this.time;
+          let userInfo = this.gameManager.username;
           this.service.sendScore(
             score,
             this.clicks,
@@ -96,7 +97,7 @@ export class PlayController extends Controller {
           console.log("game complete");
           Swal.fire({
             title: "Game Complete!",
-            text: gameManager.username + ", your score is: " + score,
+            text: userInfo + ", your score is: " + score,
             confirmButtonText: "Play Again",
             cancelButtonText: "Exit",
           }).then((result) => {
