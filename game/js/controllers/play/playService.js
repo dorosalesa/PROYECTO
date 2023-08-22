@@ -27,7 +27,7 @@ export class PlayService extends Service {
   }
 
   sendScore(score, clicks, time, username) {
-    var url = `http://localhost:3000/scores`;
+    var url = `https://diana-memorygame.vercel.app/scores`;
 
     var request = new XMLHttpRequest();
     request.open("POST", url);
