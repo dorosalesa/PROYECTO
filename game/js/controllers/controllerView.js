@@ -14,7 +14,7 @@ export class ControllerView extends View {
   }
 
   show() {
-    gsap.to(this.container, { x: 0, duration: 0.8 });
+    gsap.to(this.container, { x: 0, duration: 1 });
   }
 
   hide(state) {
