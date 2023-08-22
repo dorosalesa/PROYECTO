@@ -77,7 +77,6 @@ export class GameManager {
       case HOME_STATE:
         this.navigationContainer.classList.add("hidden");
         this.title.innerHTML = "";
-        // this.controller = new HomeController(this, this.contentContainer);
         break;
       case LOGIN_STATE:
         this.title.innerHTML = "Log In";
