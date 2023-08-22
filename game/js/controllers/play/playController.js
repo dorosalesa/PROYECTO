@@ -94,6 +94,11 @@ export class PlayController extends Controller {
             this.gameManager.username
           );
           console.log("game complete");
+          Swal.fire({
+            title: "Game Complete!",
+            text: "Your score is: " + score,
+            confirmButtonText: "Cool",
+          });
         }
       } else {
         this.hiddenTimer = window.setTimeout(() => {

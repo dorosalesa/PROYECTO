@@ -7,7 +7,7 @@
     "play": "gulp play",
     "bundle": "gulp bundle",
     "clean": "gulp clean",
-    "deploy":"gulp deploy"
+    "deploy": "gulp deploy"
   },
   "author": "Diana Rosales",
   "license": "ISC",
@@ -16,5 +16,8 @@
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "rollup": "^3.26.2"
+  },
+  "dependencies": {
+    "sweetalert2": "^11.7.27"
   }
 }
