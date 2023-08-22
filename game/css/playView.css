@@ -66,6 +66,10 @@
   cursor: pointer;
 }
 
+.swal2-popup {
+  font-family: var(--subtitleText-font);
+}
+
 @media only screen and (max-width: 600px) {
   .playView-hudContainer {
     margin-top: 5px;

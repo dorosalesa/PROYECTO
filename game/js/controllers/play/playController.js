@@ -96,8 +96,15 @@ export class PlayController extends Controller {
           console.log("game complete");
           Swal.fire({
             title: "Game Complete!",
-            text: "Your score is: " + score,
-            confirmButtonText: "Cool",
+            text: username + ", your score is: " + score,
+            confirmButtonText: "Play Again",
+            cancelButtonText: "Exit",
+          }).then((result) => {
+            if (result["isConfirmed"]) {
+              resetGame();
+            } else {
+              this.goto.bind(this, HOME_STATE);
+            }
           });
         }
       } else {
