@@ -75,7 +75,10 @@
 .swal2-confirm {
   background-color: var(--buttonBackground-color) !important;
   color: var(--buttonText-color) !important;
+  font-family: var(--subtitleText-font) !important;
+  border: none !important;
   font-weight: bold;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
 @media only screen and (max-width: 600px) {
