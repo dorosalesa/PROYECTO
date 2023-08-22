@@ -8,7 +8,7 @@ export class ScoresService extends Service {
 
   getScores() {
     var scores = [];
-    var url = `https://diana-memorygame.vercel.app/scores`;
+    var url = `https://diana-memorygame.vercel.app/score`;
     var request = new XMLHttpRequest();
     request.open("get", url);
     request.onload = () => {

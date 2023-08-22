@@ -27,7 +27,7 @@ export class PlayService extends Service {
   }
 
   sendScore(score, clicks, time, username) {
-    var url = `https://memorygame-67ac9-default-rtdb.firebaseio.com/scores`;
+    var url = `https://diana-memorygame.vercel.app/score`;
 
     var request = new XMLHttpRequest();
     request.open("POST", url);
