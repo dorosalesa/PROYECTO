@@ -3,6 +3,7 @@ const rollup = require("rollup");
 const gulp = require("gulp");
 const clean = require("gulp-clean");
 const browsersync = require("browser-sync");
+var exec = require("child_process").exec;
 const server = browsersync.create();
 
 gulp.task("clean", () => {
@@ -22,7 +23,7 @@ function firebase(cb) {
   exec("firebase deploy", function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
-    cb(err);
+    //cb(err);
   });
 }
 
@@ -42,11 +43,6 @@ exports.play = () => {
   watchingFiles();
 };
 
-exports.deploy = series(
-  changeToProduction,
-  copyGameEngine,
-  copySharedJS,
-  copySharedAssets,
-  bundle,
-  firebase
-);
+exports.deploy = () => {
+  firebase();
+};
