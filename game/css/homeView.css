@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: space-evenly;
 
-  transform: translateX(calc(innerWidth) px);
+  transform: translateX("calc(innerWidth)px");
 }
 
 .homeView-buttonsContainer {

@@ -19,7 +19,7 @@ export class ControllerView extends View {
 
   hide(state) {
     gsap.to(this.container, {
-      x: 300,
+      x: innerWidth,
       duration: 0.8,
       onComplete: this.hideComplete.bind(this, state),
     });
