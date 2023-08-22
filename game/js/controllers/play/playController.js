@@ -96,7 +96,7 @@ export class PlayController extends Controller {
           console.log("game complete");
           Swal.fire({
             title: "Game Complete!",
-            text: username + ", your score is: " + score,
+            text: gameManager.username + ", your score is: " + score,
             confirmButtonText: "Play Again",
             cancelButtonText: "Exit",
           }).then((result) => {
