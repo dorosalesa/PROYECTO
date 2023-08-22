@@ -2,7 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {"run":"node index.js"},
+  "scripts": {
+    "run": "vercel dev",
+    "deploy": "vercel --prod"
+  },
   "author": "Diana Rosales",
   "license": "ISC",
   "description": "",
