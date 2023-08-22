@@ -14,13 +14,13 @@ export class ControllerView extends View {
   }
 
   show() {
-    gsap.to(this.container, { x: 0, duration: 0.5 });
+    gsap.to(this.container, { x: 0, duration: 0.8 });
   }
 
   hide(state) {
     gsap.to(this.container, {
       x: 300,
-      duration: 1,
+      duration: 0.8,
       onComplete: this.hideComplete.bind(this, state),
     });
   }
