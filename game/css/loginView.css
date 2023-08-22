@@ -28,3 +28,9 @@ h3 {
   font-family: var(--subtitleText-font);
   font-size: 40px;
 }
+
+@media only screen and (max-height: 600px) {
+  .loginView {
+    padding-top: 50px;
+  }
+}
