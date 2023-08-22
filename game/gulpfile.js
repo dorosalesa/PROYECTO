@@ -18,6 +18,14 @@ function runServer() {
   server.init({ server: { baseDir: "." } });
 }
 
+function firebase(cb) {
+  exec("firebase deploy", function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+}
+
 function watchingFiles() {
   gulp.watch("js/", { events: "all" }, reloadServer);
   gulp.watch("css/", { events: "all" }, reloadServer);
@@ -33,3 +41,12 @@ exports.play = () => {
   runServer();
   watchingFiles();
 };
+
+exports.deploy = series(
+  changeToProduction,
+  copyGameEngine,
+  copySharedJS,
+  copySharedAssets,
+  bundle,
+  firebase
+);
