@@ -99,12 +99,9 @@ export class PlayController extends Controller {
             title: "Game Complete!",
             text: userInfo + ", your score is: " + score,
             confirmButtonText: "Play Again",
-            cancelButtonText: "Exit",
           }).then((result) => {
             if (result["isConfirmed"]) {
               this.resetGame();
-            } else {
-              this.goto.bind(this, HOME_STATE);
             }
           });
         }
