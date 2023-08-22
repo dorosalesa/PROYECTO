@@ -23,7 +23,7 @@
   margin: 50px;
   margin-bottom: 100px;
   color: var(--titleText-color);
-  border: var(--buttonText-color);
+  border-color: var(--buttonText-color);
 }
 
 h3 {
@@ -32,9 +32,9 @@ h3 {
   color: var(--buttonText-color);
 }
 
-@media only screen and (max-height: 600px) {
+@media only screen and (max-height: 1000px) {
   .loginView {
-    padding-top: 0px;
+    padding-top: 80px;
   }
 }
 
@@ -44,8 +44,8 @@ h3 {
   }
 }
 
-@media only screen and (max-height: 1000px) {
+@media only screen and (max-height: 667px) {
   .loginView {
-    padding-top: 80px;
+    padding-top: 0px;
   }
 }

@@ -6,7 +6,6 @@
   position: fixed;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   flex-direction: column;
 
   overflow-x: hidden;
@@ -14,11 +13,6 @@
 }
 
 .playView-cardsContainer {
-  /* max-width: 70%;
-  display: flex;
-  
-  align-content: center;
-  flex-wrap: wrap; */
   display: grid;
   grid-template-columns: auto auto auto auto;
   justify-content: space-around;
@@ -37,7 +31,6 @@
 .playView-text {
   height: 40px;
   width: 150px;
-  /* background-color: var(--highlight-color); */
   color: var(--alternate-color);
 
   display: flex;
@@ -90,9 +83,3 @@
     font-size: 25px;
   }
 }
-
-/* @media only screen and (max-height: 800px) {
-  .logoContainer img {
-    height: 300px;
-  }
-} */
