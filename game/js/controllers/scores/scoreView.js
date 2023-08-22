@@ -32,12 +32,21 @@ export class ScoreView extends View {
     p({ innerHTML: this.score.username }, nameContainer);
 
     p({ innerHTML: "Score" }, scoreContainer);
-    p({ innerHTML: this.score.score }, scoreContainer);
+    p(
+      { innerHTML: this.score.score, className: "scoreHighlight" },
+      scoreContainer
+    );
 
     p({ innerHTML: "Clicks" }, clicksContainer);
-    p({ innerHTML: this.score.clicks }, clicksContainer);
+    p(
+      { innerHTML: this.score.clicks, className: "scoreHighlight" },
+      clicksContainer
+    );
 
     p({ innerHTML: "Time" }, timeContainer);
-    p({ innerHTML: this.score.time }, timeContainer);
+    p(
+      { innerHTML: this.score.time, className: "scoreHighlight" },
+      timeContainer
+    );
   }
 }
