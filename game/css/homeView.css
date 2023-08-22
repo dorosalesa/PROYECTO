@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: space-evenly;
 
-  transform: translateX(100vw);
+  transform: translateX(calc(innerWidth) px);
 }
 
 .homeView-buttonsContainer {
@@ -30,9 +30,15 @@
   height: 600px;
 }
 
-@media only screen and (max-height: 800px) {
+@media only screen and (max-height: 1000px) {
   .logoContainer img {
     height: 300px;
+  }
+}
+
+@media only screen and (max-height: 800px) {
+  .logoContainer img {
+    height: 200px;
   }
 }
 

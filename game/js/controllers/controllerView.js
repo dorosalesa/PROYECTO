@@ -5,7 +5,7 @@ export class ControllerView extends View {
     super(parent);
     this.controller = controller;
 
-    this.container.style.transform = "translateX(300px)"; //'translateX(${window.innerWidth}px)'
+    this.container.style.transform = "translateX(${window.innerWidth}px)";
     this.show();
   }
 
@@ -14,11 +14,10 @@ export class ControllerView extends View {
   }
 
   show() {
-    gsap.to(this.container, { x: 0, duration: 1 });
+    gsap.to(this.container, { x: 0, duration: 0.5 });
   }
 
   hide(state) {
-    //this.callback = callback;
     gsap.to(this.container, {
       x: 300,
       duration: 1,
@@ -35,9 +34,6 @@ export class ControllerView extends View {
       cancelable: true,
       composed: false,
     });
-    //this.callback(state);
     this.container.dispatchEvent(event);
   }
 }
-
-//controller view, fadeContainer, controllerView.css para efectos de display

@@ -9,7 +9,7 @@
   justify-content: flex-start;
   flex-direction: column;
 
-  padding-top: 20%;
+  padding-top: 15%;
 }
 
 .creditsView-h3 {
@@ -26,4 +26,32 @@
   font-size: 38px;
   font-weight: bold;
   color: var(--buttonText-color);
+}
+
+@media only screen and (max-height: 800px) {
+  .creditsView {
+    padding-top: 10%;
+  }
+
+  .creditsView-h3 {
+    font-size: 35px;
+  }
+
+  .creditsView-h4 {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .creditsView {
+    padding-top: 5%;
+  }
+
+  .creditsView-h3 {
+    font-size: 25px;
+  }
+
+  .creditsView-h4 {
+    font-size: 20px;
+  }
 }
