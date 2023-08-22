@@ -85,7 +85,69 @@ app.get("/cards/:difficulty/:theme", (request, response) => {
 });
 
 app.get("/scores", (request, response) => {
-  response.send("Hello Scores!");
+  const url = `${dataBaseURL}/data/scores.json`;
+  axios
+    .get(url)
+    .then(function (result) {
+      var sortedScores = [];
+      var scoresData = result.data;
+
+      if (scoresData !== null) {
+        var scoresTemp = [];
+        for (const key in scoresData) {
+          const score = scoresData[key];
+          scoresTemp.push(score);
+        }
+
+        sortedScores = scoresTemp.sort(function (a, b) {
+          return a.score - b.score;
+        });
+      }
+
+      response.send(JSON.stringify(sortedScores.splice(0, 10)));
+    })
+    .catch(function (error) {
+      console.log(error);
+      response.send("Error getting scores!");
+    })
+    .finally(function () {
+      // always executed
+    });
+});
+
+app.post("/score", (request, response) => {
+  let body = [];
+  request
+    .on("data", (chunk) => {
+      body.push(chunk);
+    })
+    .on("end", () => {
+      const jsonData = Buffer.concat(body).toString();
+      if (jsonData !== undefined) {
+        const url = `${dataBaseURL}/data/scores.json`;
+        const score = JSON.parse(jsonData);
+
+        if (
+          score !== undefined &&
+          score.clicks !== undefined &&
+          score.time !== undefined &&
+          score.score !== undefined
+        ) {
+          axios
+            .post(url, score)
+            .then(function (result) {
+              response.send("Score saved!");
+            })
+            .catch(function (error) {
+              response.send(error);
+            });
+        } else {
+          response.send("Score undefined or null!");
+        }
+      } else {
+        response.send("request.body undefined or null!");
+      }
+    });
 });
 
 // app.listen(port, () => {
