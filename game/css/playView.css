@@ -73,8 +73,8 @@
 }
 
 .swal2-confirm {
-  background-color: var(--buttonBackground-color);
-  color: var(--buttonText-color);
+  background-color: var(--buttonBackground-color) !important;
+  color: var(--buttonText-color) !important;
   font-weight: bold;
 }
 
