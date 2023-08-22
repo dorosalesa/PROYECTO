@@ -8,6 +8,7 @@
   align-items: center;
   flex-direction: column;
   padding-top: 200px;
+  text-align: center;
 }
 
 .username {
@@ -22,11 +23,13 @@
   margin: 50px;
   margin-bottom: 100px;
   color: var(--titleText-color);
+  border: var(--buttonText-color);
 }
 
 h3 {
   font-family: var(--subtitleText-font);
   font-size: 40px;
+  color: var(--buttonText-color);
 }
 
 @media only screen and (max-height: 600px) {
@@ -37,6 +40,12 @@ h3 {
 
 @media only screen and (max-height: 800px) {
   .loginView {
-    padding-top: 50px;
+    padding-top: 40px;
+  }
+}
+
+@media only screen and (max-height: 1000px) {
+  .loginView {
+    padding-top: 80px;
   }
 }
