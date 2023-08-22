@@ -102,7 +102,7 @@ export class PlayController extends Controller {
             cancelButtonText: "Exit",
           }).then((result) => {
             if (result["isConfirmed"]) {
-              resetGame();
+              this.resetGame();
             } else {
               this.goto.bind(this, HOME_STATE);
             }
